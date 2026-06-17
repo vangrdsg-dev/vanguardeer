@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Wrangler local state (contains auth tokens, do not commit)
+.wrangler/
+
+# Deployment artifacts (generated, not source)
+vanguardeer-deploy/
+vanguardeer-deploy.zip
+
+# Old Pages Functions attempt (non-functional with direct upload)
+functions/
+
+# Private business data
+*.xlsx
+*.csv
