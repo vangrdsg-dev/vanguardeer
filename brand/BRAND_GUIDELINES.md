@@ -1,155 +1,210 @@
 # Vanguardeer Brand Guidelines
 
-**Version 1.0 — June 2026**
+**Version 1.1 — June 2026**
 
 ---
 
-## Brand Identity
+## 1. Brand Essence & Vision
 
-Vanguardeer is a strategic growth consultancy for SMBs. The brand communicates authority, precision, and direction — a guide that takes businesses from where they are to where they need to be.
+Vanguardeer helps organizations bridge the gap between vision and results. We convert strategy into disciplined execution, and execution into measurable, sustainable business outcomes. We are builders, not just advisors.
+
+**Brand Core Values:**
+- Strategic and Practical
+- Decisive and Dependable
+- Executive Credibility
 
 **Tagline:** Strategy. Execution. Growth.
 
 ---
 
-## Logo System
+## 2. The Core Identity — The Logo
 
-### The Mark — V+Compass Rose
+The chosen identity is **Alternative 2: The Strategic Guide** — a hybrid mark that addresses the gap between vision and results. It integrates a stylized compass rose seamlessly into the structure of a bold capital V.
 
-The primary mark combines a bold Navy **V** letterform with an **8-pointed compass star** integrated at the junction. The elongated gold north needle represents direction and deliberate execution. The V and compass are inseparable — they are one unified mark, not two elements placed together.
+### Symbolic Architecture
 
-**Files (all in `brand/logos/`):**
+- **The V-Structure (Architect):** The solid, linear structure of the V provides a foundation — representing robustness and implementation.
+- **The Compass Needle (Pathfinder):** The embedded compass implies leadership, direction, wisdom, and dependable navigation. Execution is always aligned with strategy.
 
-| File | Usage |
-|------|-------|
-| `logo-mark.svg` | Icon, favicon, app icon, social avatar |
-| `logo-horizontal.svg` | Default lockup — headers, email, documents |
-| `logo-horizontal-tagline.svg` | Full identity — proposals, presentations, reports |
-| `logo-stacked.svg` | Square applications — cover pages, print materials |
-| `logo-mark-reversed.svg` | White mark for dark/navy backgrounds |
+### Logo Files (`brand/logos/`)
 
-### Clearspace
+| File | Type | Usage |
+|------|------|-------|
+| `logo-mark.svg` | Mark only | Icon, favicon, watermark, foil stamp |
+| `logo-mark-reversed.svg` | Mark only (white) | Dark/navy backgrounds |
+| `logo-horizontal.svg` | Primary lockup | Headers, email, documents, website nav |
+| `logo-horizontal-tagline.svg` | Full identity | Proposals, presentations, report covers |
+| `logo-stacked.svg` | Stacked lockup | Center-aligned layouts, square favicons, report covers |
 
-Maintain clearspace equal to the height of the **V** arm width on all sides of the logo. Never crowd the mark with other elements.
+### Primary Lockup
 
-### Minimum Sizes
+The **horizontal lockup** (icon left, wordmark right) is the default. Use it everywhere unless the layout specifically demands a stacked or mark-only treatment.
 
-- Mark only: 24px / 8mm minimum
-- Horizontal lockup: 120px / 40mm minimum
-- Stacked lockup: 80px / 28mm minimum
+### Construction & Usage Rules
+
+**Minimum size:** 15mm width (horizontal lockup)
+
+**Clear space:** Maintain a distance equal to half the height of the wordmark (`X/2`) on all sides of the logo. Never crowd the mark.
+
+**Stacked variation:** Center the icon above the wordmark and tagline. Use for center-aligned layouts — report covers, square favicons, padfolios.
+
+**Textless icon:** The V-Compass mark may stand alone only when the surrounding context (labeled presentation slide, branded padfolio, etc.) clearly identifies the Vanguardeer brand.
 
 ### Don'ts
 
-- Do not recolour the mark (no green, no greyscale, no custom colours)
-- Do not separate the compass from the V
-- Do not use the old text-only logotype (`Van<span>guardeer</span>`)
+- Do not recolour the mark in any unapproved colour
+- Do not separate the compass needle from the V
+- Do not use the retired text-only logotype
 - Do not place the navy mark on dark backgrounds — use the reversed (white) variant
-- Do not add drop shadows, gradients, or effects to the mark
+- Do not add drop shadows, gradients, bevels, or effects
 - Do not stretch or distort proportions
+- Do not use text in the favicon — mark only
 
 ---
 
-## Colour Palette
+## 3. Colour Palette
+
+This palette conveys intelligence, authority, and premium quality. Reproduce colours accurately.
 
 ### Primary
 
-| Name | Hex | Usage |
-|------|-----|-------|
-| Deep Navy | `#0B1F3A` | Primary brand colour — logo V arms, headings, body text on light backgrounds |
-| Vanguard Gold | `#C8A44D` | Accent — compass star, CTAs, highlights, "GROWTH." in tagline |
+| Name | Hex | CMYK (approx.) | Usage |
+|------|-----|----------------|-------|
+| Deep Navy | `#0B1F3A` | 96, 78, 48, 52 | Default wordmark and icon colour. Professionalism and trust. |
+| Vanguard Gold | `#C8A44D` | 28, 38, 85, 3 | Accents, critical highlights, premium print finishes (hot foil stamping). Achievement and excellence. |
 
 ### Secondary
 
 | Name | Hex | Usage |
 |------|-----|-------|
-| Steel Gray | `#5B6470` | Body copy, supporting text, tagline "STRATEGY. EXECUTION." |
-| Warm White | `#FAF8F2` | Page/section backgrounds |
-| Off-White | `#F8F7F4` | Admin/dashboard backgrounds |
-| Pure White | `#FFFFFF` | Report body background |
+| Steel Gray | `#5B6470` | Body copy, structural dividers, neutral backgrounds. Modern executive feel. |
+| White | `#FFFFFF` | Backgrounds and negative space. Maximum visual clarity. |
 
-### Dark Gold (hover/active)
+### Extended Digital
 
 | Name | Hex | Usage |
 |------|-----|-------|
-| Dark Gold | `#9B7830` | Button hover states, active link states |
+| Warm White | `#FAF8F2` | Page/section backgrounds |
+| Off-White | `#F8F7F4` | Admin/dashboard backgrounds |
+| Dark Gold | `#9B7830` | Button hover, active link states |
 
-### Retired Colours
+### Retired Colours — Do Not Use
 
-- ~~`#00c896`~~ (Emerald Green) — fully retired, do not use
+- ~~`#00c896`~~ (Emerald Green) — fully retired
 - ~~`#0d2e26`~~ (Dark Teal) — fully retired
 
 ---
 
-## Typography
+## 4. Typography
 
-### Wordmark
+Professional, confident, and highly legible. Reflects a modern executive sensibility.
 
-**Montserrat** — weight 800 (ExtraBold), ALL CAPS, letter-spacing 0.18em
+### Primary (Headlines & Wordmark)
 
-### Headings
+**Vanguardeer Sans** — a custom corporate face in the style of Gotham / Avenir Next.  
+Digital fallback: `Montserrat, 'Arial Black', Arial, sans-serif`
 
-**Montserrat** — weight 700–900, letter-spacing −0.02em for large display sizes
+- Weight: Medium / SemiBold (600) for headlines; ExtraBold (800) for the wordmark
+- Style: All-caps for wordmark and headline treatments
+- Letter-spacing: `+0.18em` (wordmark), `+0.05–0.15em` (headlines)
 
-### Body
+### Body Copy
 
-**Montserrat** or system sans-serif fallback — weight 400–600
+**Open Sans** (or comparable high-legibility secondary sans-serif)  
+Digital fallback: `'Open Sans', Arial, sans-serif`
 
-### Tagline
+- Weight: Regular (400)
+- Usage: All paragraph text, correspondence, and technical details
 
-**Montserrat** — weight 600, ALL CAPS, letter-spacing 0.15em  
-"STRATEGY. EXECUTION." in Steel Gray `#5B6470`  
-"GROWTH." in Vanguard Gold `#C8A44D`
+### Tagline Treatment
 
-### Font Stack (CSS)
+All-caps, weight 600, letter-spacing `0.15em`:
+- "STRATEGY. EXECUTION." — Steel Gray `#5B6470`
+- "GROWTH." — Vanguard Gold `#C8A44D`
+
+### CSS Font Stack
 
 ```css
+/* Headlines & wordmark */
 font-family: 'Montserrat', 'Arial Black', Arial, sans-serif;
+
+/* Body */
+font-family: 'Open Sans', Arial, sans-serif;
 ```
 
 ---
 
-## Voice & Tone
+## 5. Branded Touchpoints
 
-- Direct, confident, no fluff
-- Strategic framing — every statement should feel like it moves a business forward
-- Authority without arrogance
-- Results-oriented — concrete outcomes over abstract promises
+### Corporate Stationery (Physical)
 
----
+**Business Cards**
+- Stock: Matte white, premium card weight
+- Logo: Primary navy horizontal lockup
+- Finish: V-Compass icon with subtle Vanguard Gold hot foil stamping for tactile premium finish
 
-## Digital Applications
+**Letterhead**
+- Layout: Minimalist. Navy logo top-left; contact details in Steel Gray, bottom-right.
+- Stock: White textured paper
 
-### Audit Report
+**Envelopes**
+- Interior: Solid navy
+- Exterior: Navy/Gold logo on face, clear white window
 
-- Background: White `#FFFFFF`, text: Deep Navy `#0B1F3A`
+### Corporate Materials
+
+**A4 Brochure / Folder**
+- Stock: Deep Navy textured card (suiting fabric texture)
+- Treatment: Prominent V-Compass icon, Vanguard Gold foil-stamped center
+- Rule: Avoid large exterior text — rely on the icon's quiet confidence
+
+**Leather Padfolio**
+- Material: Tan or mid-brown premium leather
+- Treatment: V-Compass icon debossed, gold-filled, centered
+
+### Digital Presence
+
+**Website Header**
+- Clear white navigation bar
+- Navy logo (horizontal lockup)
+- Navigation links in Steel Gray (`#5B6470`): SERVICES, APPROACH, RESULTS
+- CTA button in Vanguard Gold with Navy text
+
+**Hero Image Strategy**
+- Avoid generic consulting visuals (handshakes, boardrooms)
+- Use abstract structural/architectural imagery: intersecting beams, structural geometry, rendered in deep corporate blues
+- Visual supports the Builder archetype
+
+**Favicon**
+- Strict square application
+- Gold V-Compass icon on pure Navy (`#0B1F3A`) or White background
+- Never use text in favicon
+
+**Favicon Production Pipeline**
+1. Export `logo-mark.svg` to PNG at 512×512
+2. Generate `favicon.ico` at 16, 32, 48px
+3. Generate `apple-touch-icon.png` at 180×180 with `#0B1F3A` background
+
+**Presentation Templates**
+- Structured, clean layout with bold typography and clear hierarchy
+- Structural architecture graphics as supporting visuals
+- Navy / Gold / White colour system throughout
+
+### Audit Report (Digital)
+
+- Background: White `#FFFFFF`; text: Deep Navy `#0B1F3A`
 - Accent elements: Vanguard Gold `#C8A44D`
-- CTA box: Deep Navy background with Gold heading
+- CTA box: Deep Navy background, Gold heading, white body copy
 - Grade indicators: Gold for A/high-performance scores
-- Logo in report header: mark (28×25px) + "VANGUARDEER" wordmark
+- Report header logo: Mark (28×25px) + "VANGUARDEER" wordmark
 
 ### Admin Dashboard
 
 - Background: `#F8F7F4`
-- Buttons: Deep Navy with Vanguard Gold text
-- Logo: "VANGUARDEER" wordmark, no decorative span colouring
-
-### Website (Cloudflare Pages)
-
-- Primary CTA buttons: `#C8A44D` background, `#0B1F3A` text
-- Nav logo: `logo-horizontal.svg` or `logo-horizontal-tagline.svg`
-- Footer: navy background with reversed (white) mark
+- Buttons: Deep Navy background, Vanguard Gold text
+- Logo: VANGUARDEER wordmark only (no decorative span colouring)
 
 ---
 
-## Social & Favicon
-
-Use `logo-mark.svg` for all circular/square icon contexts. When placed on a navy background, use `logo-mark-reversed.svg`.
-
-Recommended favicon pipeline:
-1. Export `logo-mark.svg` to PNG at 512×512 (navy mark on transparent)
-2. Generate `favicon.ico` (16, 32, 48px) from the PNG
-3. Generate `apple-touch-icon.png` (180×180px) with `#0B1F3A` background
-
----
-
-*Last updated: June 2026 — Alternative 2: The Strategic Guide*
+*Version 1.1 — Last updated June 2026*  
+*Identity: Alternative 2 — The Strategic Guide*
