@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" role="img" aria-label="Vanguardeer mark">
+  <!-- Left V arm -->
+  <polygon points="7,8 24,8 43,78 26,78" fill="#0B1F3A"/>
+  <!-- Right V arm -->
+  <polygon points="93,8 76,8 57,78 74,78" fill="#0B1F3A"/>
+  <!-- Gold 8-pointed compass star -->
+  <polygon points="50,2 53,18 64,12 58,23 72,26 58,29 64,40 53,34 50,48 47,34 36,40 42,29 28,26 42,23 36,12 47,18" fill="#C8A44D"/>
+  <!-- Inner compass needle (navy diamond) -->
+  <polygon points="50,14 55,26 50,38 45,26" fill="#0B1F3A"/>
+</svg>
