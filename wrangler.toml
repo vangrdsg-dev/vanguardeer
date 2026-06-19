@@ -17,3 +17,8 @@ routes = [
 [[kv_namespaces]]
 binding = "AUDIT_REPORTS"
 id = "9be03d56f64848268f9dc7ddd94fde6a"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "vanguardeer-db"
+database_id = "cf58b6ca-6a82-4ce4-a922-20d4227c2b5b"

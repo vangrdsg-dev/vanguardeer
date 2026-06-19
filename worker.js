@@ -144,12 +144,26 @@ async function handleChat(request, env) {
   let body;
   try { body = await request.json(); } catch { return json({ error: "Invalid JSON" }, 400, ch); }
   const { messages, system, max_tokens = 150 } = body;
+  const { session_id, email } = body;
   const up = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" },
     body: JSON.stringify({ model: "claude-haiku-4-5-20251001", max_tokens, system, messages }),
   });
   const data = await up.json();
+
+  // Persist conversation to D1 (non-blocking, best-effort)
+  if (env.DB && messages?.length) {
+    env.DB.prepare(
+      `INSERT INTO chat_sessions (created_at, session_id, messages, email) VALUES (?, ?, ?, ?)`
+    ).bind(
+      new Date().toISOString(),
+      session_id || uid(),
+      JSON.stringify(messages),
+      email || ""
+    ).run().catch(() => {});
+  }
+
   return new Response(JSON.stringify(data), { status: up.status, headers: { ...ch, "Content-Type": "application/json" } });
 }
 
@@ -178,6 +192,28 @@ async function handleAuditRequest(request, env, ctx) {
 
   await env.AUDIT_REPORTS.put(`report:${id}`, JSON.stringify(record));
   await addToIndex(env, id, "pending", record.client.business);
+
+  // Persist structured data to D1 for querying/reporting
+  try {
+    await env.DB.prepare(
+      `INSERT INTO audit_requests (created_at, business_name, industry, website, name, email, whatsapp, keyword, notes, utm_data, form_time, source)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+    ).bind(
+      record.created_at,
+      body.business || "",
+      body.industry || "",
+      body.website  || "",
+      body.name     || "",
+      body.email    || "",
+      body.phone    || "",
+      body.keyword  || "",
+      body.notes    || "",
+      JSON.stringify(body.utm || {}),
+      body.form_time || "",
+      body.source || "homepage"
+    ).run();
+  } catch (_) { /* D1 failure is non-fatal — KV is the source of truth */ }
+
   ctx.waitUntil(autoAudit(id, record, env));
 
   return json({ success: true, message: "Your audit is being prepared. Expect it within minutes!" }, 200, ch);
