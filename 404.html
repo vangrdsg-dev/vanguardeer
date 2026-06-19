@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Vanguardeer</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2NXT9XWLET"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2NXT9XWLET');</script>
+<style>
+.notfound{min-height:calc(100vh - var(--total-offset) - 120px);display:flex;align-items:center;justify-content:center;padding:80px 28px}
+.notfound-inner{text-align:center;max-width:520px}
+.notfound-code{font-family:var(--mono);font-size:96px;font-weight:500;color:var(--border2);line-height:1;margin-bottom:8px}
+.notfound-title{font-family:var(--display);font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--text);margin-bottom:14px}
+.notfound-sub{font-size:16px;color:var(--text2);line-height:1.75;margin-bottom:32px}
+.notfound-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px}
+.notfound-link{font-size:13px;color:var(--text2);padding:8px 16px;border:1px solid var(--border2);border-radius:8px;transition:all 0.15s}
+.notfound-link:hover{color:var(--amber);border-color:var(--amber-b);background:var(--amber-dim)}
+</style>
+</head>
+<body>
+<div id="bar"><a href="/audit.html">⚡ Free Digital Footprint Audit — worth S$299. Claim yours →</a></div>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/brand/logos/logo-horizontal-tagline.svg" alt="Vanguardeer" width="160" height="52"></a>
+    <div class="nav-links">
+      <a href="/#how" class="nav-link">How It Works</a>
+      <a href="/#services" class="nav-link">Services</a>
+      <a href="/insights/" class="nav-link">Insights</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="/audit.html" class="btn btn-amber btn-sm" style="margin-left:10px">Free Audit →</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="/insights/" class="nav-link">Insights</a>
+  <a href="/about.html" class="nav-link">About</a>
+  <a href="/pricing.html" class="nav-link">Pricing</a>
+  <a href="/audit.html" class="btn btn-amber btn-lg">Get Free Audit →</a>
+</div>
+
+<div style="padding-top:var(--total-offset)">
+  <div class="notfound">
+    <div class="notfound-inner">
+      <div class="notfound-code">404</div>
+      <h1 class="notfound-title">This page doesn't exist.</h1>
+      <p class="notfound-sub">The page you're looking for may have moved or been removed. The good news — everything worth finding is one click away.</p>
+      <a href="/audit.html" class="btn btn-amber btn-lg" onclick="gtag('event','cta_click',{'page':'404','cta':'404-audit'})">Get Your Free Audit →</a>
+      <div class="notfound-links">
+        <a href="/" class="notfound-link">← Homepage</a>
+        <a href="/insights/" class="notfound-link">Insights</a>
+        <a href="/pricing.html" class="notfound-link">Pricing</a>
+        <a href="/about.html" class="notfound-link">About</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name"><em>Vanguardeer</em></div>
+        <div class="footer-brand-sub">Strategy. Execution. Growth.</div>
+        <div class="footer-brand-desc">Local SEO and CRO for Singapore SMEs.</div>
+        <div class="footer-contact"><span class="footer-contact-icon">📞</span><a href="tel:+6596960063">+65 9696 0063</a></div>
+        <div class="footer-contact"><span class="footer-contact-icon">✉️</span><a href="mailto:enquiries@vanguardeer.com">enquiries@vanguardeer.com</a></div>
+      </div>
+      <div>
+        <div class="fcol-title">Services</div>
+        <a href="/pricing.html" class="flink">Local SEO</a>
+        <a href="/pricing.html" class="flink">CRO</a>
+        <a href="/audit.html" class="flink">Free Audit</a>
+      </div>
+      <div>
+        <div class="fcol-title">Company</div>
+        <a href="/insights/" class="flink">Insights</a>
+        <a href="/about.html" class="flink">About</a>
+        <a href="/privacy.html" class="flink">Privacy Policy</a>
+        <a href="/terms.html" class="flink">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Vanguardeer. All rights reserved.</span>
+      <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20);});
+const h=document.getElementById('hamburger'),d=document.getElementById('mobile-drawer');
+h.addEventListener('click',()=>{h.classList.toggle('open');d.classList.toggle('open');});
+d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{h.classList.remove('open');d.classList.remove('open');}));
+</script>
+</body>
+</html>

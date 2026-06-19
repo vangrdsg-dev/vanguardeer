@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vanguardeer.com/sitemap.xml
+
+# Disallow internal/admin paths
+Disallow: /tasks/
+Disallow: /.wrangler/
+Disallow: /Claude/
+
+# Allow all content pages
+Allow: /insights/
+Allow: /audit.html
+Allow: /pricing.html
+Allow: /about.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /shared.css
+Allow: /brand/
+Allow: /images/
