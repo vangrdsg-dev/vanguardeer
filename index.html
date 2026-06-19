@@ -424,6 +424,9 @@ body.is-audit .seg-audit{display:block}body.is-audit .seg-default{display:none}
 .clients-row{margin-top:18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .clients-label{font-size:10px;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
 .clients-badges{display:flex;flex-wrap:wrap;gap:7px}
+.clients-logos{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:4px}
+.client-logo{opacity:0.7;filter:grayscale(20%);transition:opacity 0.2s,filter 0.2s;object-fit:contain;max-width:120px}
+.client-logo:hover{opacity:1;filter:grayscale(0%)}
 
 /* ═══ ABOUT ══════════════════════════════════════════════════ */
 #about{padding:var(--section) 0}
@@ -941,16 +944,17 @@ body.is-audit .seg-audit{display:block}body.is-audit .seg-default{display:none}
       </div>
     </div>
     <div class="clients-row">
-      <div>
+      <div style="flex:1">
         <div class="clients-label">Clients &amp; organisations</div>
-        <div class="clients-badges">
-          <span class="badge badge-ghost">KPMG</span>
-          <span class="badge badge-ghost">Changi Airport Group</span>
-          <span class="badge badge-ghost">Ethis Group</span>
-          <span class="badge badge-ghost">EthisX Capital Markets</span>
-          <span class="badge badge-ghost">SMF · IMDA</span>
-          <span class="badge badge-ghost">ERA Singapore</span>
-          <span class="badge badge-ghost">Global Sources</span>
+        <div class="clients-logos">
+          <img src="/images/logos/kpmg.svg" alt="KPMG" class="client-logo" height="32">
+          <img src="/images/logos/cag.png" alt="Changi Airport Group" class="client-logo" height="32">
+          <img src="/images/logos/ethis.png" alt="Ethis Group" class="client-logo" height="28">
+          <img src="/images/logos/ethisx.png" alt="EthisX Capital Markets" class="client-logo" height="28">
+          <img src="/images/logos/smf.png" alt="SMF · IMDA" class="client-logo" height="32">
+          <img src="/images/logos/era.svg" alt="ERA Singapore" class="client-logo" height="32">
+          <img src="/images/logos/globalsources.svg" alt="Global Sources" class="client-logo" height="28">
+          <img src="/images/logos/tuscani.png" alt="Tuscani Tapware" class="client-logo" height="28">
         </div>
       </div>
       <div style="text-align:right;flex-shrink:0">
@@ -961,54 +965,7 @@ body.is-audit .seg-audit{display:block}body.is-audit .seg-default{display:none}
   </div>
 </section>
 
-<!-- ABOUT — SEO OPTIMISED FOR NOR AZAM AHMAD -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-photo-wrap">
-        <img
-          src="/images/nor-azam-ahmad.jpeg"
-          alt="Nor Azam Ahmad, Founder of Vanguardeer, CRO and local SEO consultant Singapore"
-          class="about-img"
-          width="380" height="506"
-          loading="lazy"
-          itemprop="image"
-        >
-        <div class="about-photo-caption">
-          <div class="about-name" itemprop="name">Nor Azam Ahmad</div>
-          <div class="about-title">Founder · Vanguardeer &amp; LogicLayer</div>
-        </div>
-      </div>
-      <div class="about-right" itemscope itemtype="https://schema.org/Person">
-        <meta itemprop="name" content="Nor Azam Ahmad">
-        <meta itemprop="jobTitle" content="Founder and Principal Growth Consultant">
-        <meta itemprop="description" content="Top business growth consultant in Singapore with 25 years experience in CRO, AI automation, analytics, and digital transformation.">
-        <span class="badge badge-amber" style="margin-bottom:16px">The person behind the system</span>
-        <h2 itemprop="name">Nor Azam Ahmad</h2>
-        <div class="about-tagline">"Top business growth consultant · Singapore &amp; ASEAN"</div>
-        <p class="about-body">25 years of commercial and technical experience across CRO, AI workflow automation, analytics, BI infrastructure, GTM strategy, and full-stack engineering. I've held revenue responsibility in organisations from early-stage Islamic fintech to enterprise real estate to KPMG's digital transformation practice.</p>
-        <p class="about-body">I built Vanguardeer because I kept seeing the same two problems destroying revenue for Singapore SMEs — and I wanted to build a system that fixed both, permanently, without requiring the business owner to become a digital marketing expert.</p>
-        <div class="creds">
-          <div class="cred"><div class="cred-co">KPMG Singapore</div><div class="cred-role">Digital Transformation</div></div>
-          <div class="cred"><div class="cred-co">Changi Airport Group</div><div class="cred-role">Digital Analytics</div></div>
-          <div class="cred"><div class="cred-co">Ethis Group</div><div class="cred-role">Head of Growth</div></div>
-          <div class="cred"><div class="cred-co">Global Sources</div><div class="cred-role">Founding SEM Team · 400× ROAS</div></div>
-          <div class="cred"><div class="cred-co">ERA Singapore</div><div class="cred-role">Marketing Director (9 yrs)</div></div>
-          <div class="cred"><div class="cred-co">General Assembly 2023</div><div class="cred-role">Software Engineering Intensive</div></div>
-        </div>
-        <div class="about-badges">
-          <span class="badge badge-ghost">🇸🇬 Singapore</span>
-          <span class="badge badge-ghost">Bahasa Melayu · Indonesia</span>
-          <span class="badge badge-ghost">SQL · Python · Tableau</span>
-          <span class="badge badge-ghost">Full-Stack · AI Automation</span>
-          <a href="https://linkedin.com/in/norazam" target="_blank" rel="noopener" class="badge badge-teal">LinkedIn /in/norazam ↗</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ARTICLES / INSIGHTS -->
 <section id="articles" class="section alt">
   <div class="container">
     <div class="sh">
@@ -1260,7 +1217,7 @@ document.addEventListener("DOMContentLoaded", function() {
       setTimeout(function() {
         var auditSection = document.getElementById("audit");
         if (auditSection) auditSection.scrollIntoView({ behavior: "smooth" });
-      }, 2400);
+      }, 5000);
     });
   }
 
@@ -1270,7 +1227,7 @@ document.addEventListener("DOMContentLoaded", function() {
   if (captchaQ) {
     var a = Math.floor(Math.random() * 9) + 1;
     var b = Math.floor(Math.random() * 9) + 1;
-    captchaQ.textContent = "Quick check: " + a + " + " + b + " = ?";
+    captchaQ.textContent = "Spam Bot Check: " + a + " + " + b + " = ?";
     captchaAnswer = a + b;
   }
 
