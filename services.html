@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Local SEO, CRO &amp; Growth for Singapore SMEs | Vanguardeer</title>
+<meta name="description" content="Choose the right growth service for your Singapore business. Local SEO, Conversion Rate Optimisation (CRO), or the Full Growth System. Transparent pricing, 90-day performance clause.">
+<meta name="keywords" content="local seo pricing singapore, cro pricing singapore, seo packages singapore, vanguardeer pricing, local seo cost singapore">
+<meta property="og:title" content="Services — Local SEO, CRO &amp; Growth for Singapore SMEs | Vanguardeer">
+<meta property="og:description" content="Choose the right growth service for your Singapore business. Local SEO, CRO, or the Full Growth System. Transparent pricing, 90-day performance clause.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vanguardeer.com/services.html">
+<meta property="og:image" content="https://vanguardeer.com/brand/logos/og-image.png">
+<link rel="canonical" href="https://vanguardeer.com/services.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2NXT9XWLET"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2NXT9XWLET');</script>
+<style>
+.pricing-hero{padding-top:calc(var(--total-offset) + 56px);padding-bottom:56px;background:var(--teal);position:relative;overflow:hidden}
+.pricing-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:56px 56px}
+.pricing-h1{font-family:var(--display);font-size:clamp(32px,4vw,52px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:14px;position:relative;z-index:1;text-align:center}
+.pricing-deck{font-size:17px;color:rgba(255,255,255,0.7);max-width:680px;line-height:1.75;position:relative;z-index:1;text-align:center;margin:0 auto}
+
+/* Tab selector */
+.svc-selector{background:var(--bg2);border-bottom:1px solid var(--border);padding:0}
+.svc-tabs-top{display:grid;grid-template-columns:repeat(3,1fr);max-width:var(--container);margin:0 auto;padding:0 28px}
+.svc-tab-top{padding:28px 24px;border:none;background:transparent;cursor:pointer;text-align:left;border-bottom:3px solid transparent;transition:all 0.2s;font-family:var(--sans);position:relative}
+.svc-tab-top:hover{background:rgba(11,31,58,0.03)}
+.svc-tab-top.active{border-bottom-color:var(--amber);background:var(--surface)}
+.tab-num{display:block;font-size:10px;font-weight:700;color:var(--amber);font-family:var(--mono);letter-spacing:0.1em;margin-bottom:6px}
+.tab-name{display:block;font-family:var(--display);font-size:20px;font-weight:800;color:var(--text);margin-bottom:4px}
+.tab-sub{display:block;font-size:12px;color:var(--text3);font-family:var(--mono)}
+.svc-tab-top.active .tab-name{color:var(--amber)}
+.svc-panel-top{display:none;padding:64px 0}
+.svc-panel-top.active{display:block}
+@media(max-width:768px){
+  .svc-tabs-top{grid-template-columns:1fr}
+  .svc-tab-top{padding:18px 20px;border-bottom:none;border-left:3px solid transparent}
+  .svc-tab-top.active{border-left-color:var(--amber);border-bottom:none}
+}
+
+/* Suggestion tool */
+.suggest-tool{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:36px;margin:56px 0 0}
+.suggest-tool-title{font-family:var(--display);font-size:22px;font-weight:800;color:var(--text);margin-bottom:6px}
+.suggest-tool-sub{font-size:14px;color:var(--text2);margin-bottom:28px}
+.sq{margin-bottom:24px}
+.sq-label{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:0.08em;font-family:var(--mono);margin-bottom:10px}
+.sq-options{display:flex;flex-wrap:wrap;gap:8px}
+.sq-btn{padding:9px 18px;border:1.5px solid var(--border2);border-radius:8px;font-size:13px;font-weight:600;color:var(--text2);background:var(--bg2);cursor:pointer;transition:all 0.15s;font-family:var(--sans)}
+.sq-btn:hover,.sq-btn.selected{border-color:var(--amber-b);color:var(--amber);background:var(--amber-dim)}
+.suggest-result{display:none;background:linear-gradient(135deg,rgba(200,164,77,0.08),rgba(11,31,58,0.04));border:1px solid var(--amber-b);border-radius:12px;padding:20px 24px;margin-top:20px}
+.suggest-result.show{display:block}
+.suggest-result-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;font-family:var(--mono);color:var(--amber);margin-bottom:6px}
+.suggest-result-text{font-size:15px;color:var(--text);font-weight:600}
+
+/* Pricing sections */
+.pricing-section{padding:64px 0}
+.pricing-section.alt{background:var(--bg2)}
+.section-header{margin-bottom:40px}
+.section-header h2{font-family:var(--display);font-size:clamp(26px,3vw,38px);font-weight:900;color:var(--text);margin-bottom:10px}
+.section-header p{font-size:15px;color:var(--text2);max-width:540px;line-height:1.75}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.p-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:border-color 0.2s}
+.p-card.featured{border-color:var(--amber-b);box-shadow:0 0 32px rgba(200,164,77,0.08)}
+.p-card-top{padding:24px 22px 20px;border-bottom:1px solid var(--border)}
+.p-card-name{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;font-family:var(--mono);margin-bottom:8px}
+.p-card-price{font-family:var(--display);font-size:36px;font-weight:900;color:var(--text);line-height:1;margin-bottom:4px}
+.p-card-price span{font-size:14px;font-weight:400;color:var(--text3);font-family:var(--sans)}
+.p-card-desc{font-size:13px;color:var(--text2);line-height:1.6;margin-top:10px}
+.p-card-body{padding:20px 22px;flex:1}
+.p-feat{display:flex;gap:9px;margin-bottom:9px;font-size:12px;color:var(--text2);align-items:flex-start;line-height:1.4}
+.p-check{flex-shrink:0;font-size:11px;margin-top:1px}
+.p-card-foot{padding:0 22px 20px}
+.p-cta{display:block;text-align:center;padding:12px;border-radius:9px;font-size:13px;font-weight:700;transition:all 0.2s;text-decoration:none}
+.p-cta.pri{background:var(--amber);color:#0B1F3A;box-shadow:0 0 16px rgba(200,164,77,0.2)}
+.p-cta.pri:hover{background:var(--amber2)}
+.p-cta.sec{background:var(--surface2);border:1px solid var(--border2);color:var(--text2)}
+.p-cta.sec:hover{border-color:var(--amber-b);color:var(--amber);background:var(--amber-dim)}
+
+/* FGS block */
+.fgs-block{background:var(--teal);border-radius:16px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.fgs-left h3{font-family:var(--display);font-size:clamp(24px,3vw,34px);font-weight:900;color:#fff;margin-bottom:12px}
+.fgs-left p{font-size:15px;color:rgba(255,255,255,0.72);line-height:1.75;margin-bottom:20px}
+.fgs-feats{display:flex;flex-direction:column;gap:10px}
+.fgs-feat{display:flex;gap:10px;font-size:14px;color:rgba(255,255,255,0.8);align-items:flex-start}
+.fgs-feat-icon{color:var(--amber);flex-shrink:0;font-size:14px;margin-top:1px}
+.fgs-right{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:32px;text-align:center}
+.fgs-right h4{font-family:var(--display);font-size:18px;font-weight:800;color:#fff;margin-bottom:10px}
+.fgs-right p{font-size:13px;color:rgba(255,255,255,0.65);margin-bottom:24px;line-height:1.6}
+
+/* FAQ */
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:8px}
+.faq-q{padding:17px 18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:14px;font-weight:600;color:var(--text);gap:12px;user-select:none;line-height:1.4}
+.faq-q:hover{color:var(--amber)}
+.faq-icon{font-size:16px;flex-shrink:0;transition:transform 0.25s;color:var(--text3)}
+.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--amber)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1)}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding:0 18px 16px;font-size:14px;color:var(--text2);line-height:1.7}
+
+.perf-clause{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;margin-top:32px}
+.perf-icon{font-size:24px;flex-shrink:0}
+.perf-text{font-size:14px;color:var(--text2);line-height:1.7}
+.perf-text strong{color:var(--text)}
+
+.panel-intro{font-size:16px;color:var(--text2);line-height:1.75;max-width:680px;margin-bottom:36px}
+.panel-links{margin-top:28px;display:flex;gap:20px;flex-wrap:wrap}
+.panel-links a{font-size:14px;color:var(--amber);text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:1024px){.pricing-grid{grid-template-columns:1fr 1fr}.fgs-block{grid-template-columns:1fr}}
+@media(max-width:768px){.pricing-grid{grid-template-columns:1fr}.sq-options{flex-direction:column}.fgs-block{padding:32px 24px}}
+</style>
+</head>
+<body>
+<div id="bar"><a href="/audit.html">⚡ Free Digital Footprint Audit — worth S$299. Claim yours →</a></div>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/brand/logos/logo-horizontal-tagline.svg" alt="Vanguardeer" width="160" height="52"></a>
+    <div class="nav-links">
+      <a href="/#how" class="nav-link">How It Works</a>
+      <a href="/insights/" class="nav-link">Insights</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/services.html" class="nav-link active">Services</a>
+      <a href="/audit.html" class="btn btn-amber btn-sm" style="margin-left:10px">Free Audit →</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="/#how" class="nav-link">How It Works</a>
+  <a href="/insights/" class="nav-link">Insights</a>
+  <a href="/about.html" class="nav-link">About</a>
+  <a href="/services.html" class="nav-link">Services</a>
+  <a href="/audit.html" class="btn btn-amber btn-lg">Get Free Audit →</a>
+</div>
+
+<div class="pricing-hero">
+  <div class="container">
+    <div class="breadcrumb" style="margin-bottom:20px;position:relative;z-index:1;text-align:center">
+      <a href="/" style="color:rgba(255,255,255,0.5)">Home</a>
+      <span class="breadcrumb-sep" style="color:rgba(255,255,255,0.3)">›</span>
+      <span style="color:rgba(255,255,255,0.7)">Services</span>
+    </div>
+    <h1 class="pricing-h1">The right service for where your<br>business is right now.</h1>
+    <p class="pricing-deck">Three ways we grow Singapore businesses — Local Search Engine Optimisation (SEO), Conversion Rate Optimisation (CRO), and the Full Growth System. Pick the one that matches your biggest gap.</p>
+  </div>
+</div>
+
+<!-- SERVICE SELECTOR TABS -->
+<div class="svc-selector">
+  <div class="container">
+    <div class="svc-tabs-top">
+      <button class="svc-tab-top active" onclick="showService('seo', this)">
+        <span class="tab-num">01</span>
+        <span class="tab-name">Local SEO</span>
+        <span class="tab-sub">Search Engine Optimisation</span>
+      </button>
+      <button class="svc-tab-top" onclick="showService('cro', this)">
+        <span class="tab-num">02</span>
+        <span class="tab-name">CRO</span>
+        <span class="tab-sub">Conversion Rate Optimisation</span>
+      </button>
+      <button class="svc-tab-top" onclick="showService('fgs', this)">
+        <span class="tab-num">03</span>
+        <span class="tab-name">Full Growth System</span>
+        <span class="tab-sub">SEO + CRO combined</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL 1: LOCAL SEO -->
+<div class="svc-panel-top active" id="panel-seo-top">
+  <div class="container">
+    <p class="panel-intro">Local Search Engine Optimisation (SEO) is how you make sure customers searching for your services on Google Maps and Google Search actually find you. If you're not in the top 3 results for your primary keyword, you're invisible to most of the people who are already looking for what you offer. Choose a tier based on how competitive your category is and how many channels you need to cover.</p>
+    <div class="pricing-grid">
+      <div class="p-card">
+        <div class="p-card-top">
+          <div class="p-card-name" style="color:#A78BFA">Dominance</div>
+          <div class="p-card-price">S$4,200<span>/mo</span></div>
+          <div class="p-card-desc">Full multi-channel stack for competitive categories — dental, legal, renovation, financial services.</div>
+        </div>
+        <div class="p-card-body">
+          <div class="p-feat"><span class="p-check" style="color:#A78BFA">✓</span><strong>Everything in Growth</strong>, plus:</div>
+          <div class="p-feat"><span class="p-check" style="color:#A78BFA">✓</span>Instagram + Lemon8 content (20/mo)</div>
+          <div class="p-feat"><span class="p-check" style="color:#A78BFA">✓</span>12 service + 10 area pages written</div>
+          <div class="p-feat"><span class="p-check" style="color:#A78BFA">✓</span>Telegram retention channel</div>
+          <div class="p-feat"><span class="p-check" style="color:#A78BFA">✓</span>Weekly competitive intelligence</div>
+          <div class="p-feat"><span class="p-check" style="color:#A78BFA">✓</span>Quarterly strategy call with Azam</div>
+        </div>
+        <div class="p-card-foot"><a href="/audit.html" class="p-cta sec" onclick="gtag('event','cta_click',{'page':'services','cta':'dominance'})">Start with Free Audit →</a></div>
+      </div>
+      <div class="p-card featured">
+        <div class="p-card-top" style="background:rgba(200,164,77,0.04)">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <div class="p-card-name" style="color:var(--amber);margin-bottom:0">Growth</div>
+            <span class="badge badge-amber" style="font-size:9px">Most Popular</span>
+          </div>
+          <div class="p-card-price">S$2,400<span>/mo</span></div>
+          <div class="p-card-desc">Full local footprint — Maps, Carousell, Facebook Groups, reputation, content pages.</div>
+        </div>
+        <div class="p-card-body">
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span><strong>Everything in Essentials</strong>, plus:</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Carousell management</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Facebook Groups monitoring</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>HWZ &amp; Reddit brand monitoring</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Vertical platform profile</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>6 service + 5 area pages written</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Citation expansion (30+ directories)</div>
+        </div>
+        <div class="p-card-foot"><a href="/audit.html" class="p-cta pri" onclick="gtag('event','cta_click',{'page':'services','cta':'growth'})">Start with Free Audit →</a></div>
+      </div>
+      <div class="p-card">
+        <div class="p-card-top">
+          <div class="p-card-name" style="color:var(--teal)">Essentials</div>
+          <div class="p-card-price">S$1,200<span>/mo</span></div>
+          <div class="p-card-desc">Google Maps dominance for single-location trades and services. Maps is 90% of their inbound.</div>
+        </div>
+        <div class="p-card-body">
+          <div class="p-feat"><span class="p-check" style="color:var(--teal)">✓</span>Full 12-week GBP workflow</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--teal)">✓</span>99-service list + descriptions</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--teal)">✓</span>Title tag, H1/H2, schema, NAP</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--teal)">✓</span>Core citations (Bing, Apple, Foursquare)</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--teal)">✓</span>Weekly GBP post copy</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--teal)">✓</span>Monthly ranking report</div>
+        </div>
+        <div class="p-card-foot"><a href="/audit.html" class="p-cta sec" onclick="gtag('event','cta_click',{'page':'services','cta':'essentials'})">Start with Free Audit →</a></div>
+      </div>
+    </div>
+    <div class="perf-clause">
+      <div class="perf-icon">✅</div>
+      <div class="perf-text"><strong>90-day performance clause on all Local SEO packages.</strong> If your ranking hasn't moved measurably by Day 90, you can exit with 30 days notice — no penalty. We're confident enough in the system to put this in writing.</div>
+    </div>
+    <div class="panel-links">
+      <a href="/insights/google-maps-ranking-singapore.html">How does local SEO work? →</a>
+      <a href="/insights/local-seo-cost-singapore.html">How much does it cost? →</a>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL 2: CRO -->
+<div class="svc-panel-top" id="panel-cro-top">
+  <div class="container">
+    <p class="panel-intro">Conversion Rate Optimisation (CRO) fixes why visitors to your website don't become customers. If you're getting traffic but your phone isn't ringing, your website has a conversion problem. CRO finds the specific leaks — the wrong headline, the buried phone number, the form with too many fields — and fixes them systematically. Choose a tier based on whether you need a diagnosis, ongoing implementation, or full embedded leadership.</p>
+    <div class="pricing-grid">
+      <div class="p-card">
+        <div class="p-card-top">
+          <div class="p-card-name" style="color:var(--amber)">Conversion Leak Audit</div>
+          <div class="p-card-price">S$3,500<span> once</span></div>
+          <div class="p-card-desc">10-day deep diagnostic. Hypothesis-led site walk, analytics audit, and a prioritised fix list you can act on immediately.</div>
+        </div>
+        <div class="p-card-body">
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Qualitative site walk (before analytics)</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>GA4, heatmap &amp; session recording audit</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Copy &amp; messaging assessment</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Mobile UX review</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Prioritised recommendation report</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>60-min debrief with Azam</div>
+        </div>
+        <div class="p-card-foot"><a href="/audit.html" class="p-cta sec" onclick="gtag('event','cta_click',{'page':'services','cta':'cro-audit'})">Start with Free Audit →</a></div>
+      </div>
+      <div class="p-card featured">
+        <div class="p-card-top" style="background:rgba(200,164,77,0.04)">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <div class="p-card-name" style="color:var(--amber);margin-bottom:0">Implementation Retainer</div>
+            <span class="badge badge-amber" style="font-size:9px">Best ROI</span>
+          </div>
+          <div class="p-card-price">S$4,500<span>/mo</span></div>
+          <div class="p-card-desc">We don't just find the leaks — we fix them. Ongoing funnel optimisation, A/B testing, and copy implementation.</div>
+        </div>
+        <div class="p-card-body">
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Everything in the Audit (ongoing)</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Landing page redesign &amp; copywriting</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>A/B test design, implementation, analysis</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>CTA optimisation — copy, placement</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Monthly conversion rate report</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Bi-weekly strategy call with Azam</div>
+        </div>
+        <div class="p-card-foot"><a href="/audit.html" class="p-cta pri" onclick="gtag('event','cta_click',{'page':'services','cta':'cro-retainer'})">Start with Free Audit →</a></div>
+      </div>
+      <div class="p-card">
+        <div class="p-card-top">
+          <div class="p-card-name" style="color:var(--amber)">Fractional Growth Director</div>
+          <div class="p-card-price">Custom<span> quote</span></div>
+          <div class="p-card-desc">Azam embedded as your part-time growth leader. Strategy, execution, team coaching, board-level accountability.</div>
+        </div>
+        <div class="p-card-body">
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Full funnel ownership — acquisition to retention</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>AI workflow automation build-out</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Analytics &amp; BI infrastructure</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Team capability building</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Investor / board reporting</div>
+          <div class="p-feat"><span class="p-check" style="color:var(--amber)">✓</span>Past clients: KPMG, Changi Airport, Ethis</div>
+        </div>
+        <div class="p-card-foot"><a href="https://cal.com/vanguardeer-pte-ltd-5v1v0x/30min" target="_blank" rel="noopener" class="p-cta sec" onclick="gtag('event','cta_click',{'page':'services','cta':'fractional'})">Let's talk scope →</a></div>
+      </div>
+    </div>
+    <div class="panel-links">
+      <a href="/insights/conversion-rate-optimisation-singapore.html">What is CRO and do I need it? →</a>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL 3: FULL GROWTH SYSTEM -->
+<div class="svc-panel-top" id="panel-fgs-top">
+  <div class="container" style="max-width:820px">
+    <div class="fgs-block">
+      <div class="fgs-left">
+        <span class="badge" style="background:rgba(200,164,77,0.2);color:var(--amber);border-color:rgba(200,164,77,0.4);margin-bottom:16px">Full Growth System</span>
+        <h3>Local SEO + CRO.<br>Running simultaneously.</h3>
+        <p>Most agencies sell you one thing. We run both systems together because that's where the compound effect kicks in — more qualified traffic arriving at a website that's built to convert it. Each system multiplies the other's results.</p>
+        <div class="fgs-feats">
+          <div class="fgs-feat"><span class="fgs-feat-icon">📍</span>Local SEO building your Maps ranking and visibility week by week</div>
+          <div class="fgs-feat"><span class="fgs-feat-icon">🎯</span>CRO ensuring more of that traffic converts into paying customers</div>
+          <div class="fgs-feat"><span class="fgs-feat-icon">⚙️</span>AI automation running both systems without consuming your time</div>
+          <div class="fgs-feat"><span class="fgs-feat-icon">📊</span>Unified reporting across traffic, rankings, and conversion in one view</div>
+        </div>
+      </div>
+      <div class="fgs-right">
+        <h4>Custom quote.<br>Minimum 12 months.</h4>
+        <p>Every Full Growth System engagement is scoped specifically to your business, category, and competitive landscape. There's no headline price because the right answer depends on your situation.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:20px">The conversation starts with your free audit — so we both know exactly what we're working with before any proposal is made.</p>
+        <a href="https://cal.com/vanguardeer-pte-ltd-5v1v0x/30min" target="_blank" rel="noopener" class="btn btn-amber btn-lg" style="width:100%;justify-content:center" onclick="gtag('event','cta_click',{'page':'services','cta':'fgs-cal'})">Let's talk about your numbers →</a>
+        <div style="margin-top:12px;font-size:11px;color:rgba(255,255,255,0.4);text-align:center">Or start with the <a href="/audit.html" style="color:var(--amber)">free Digital Footprint Audit</a></div>
+      </div>
+    </div>
+    <div style="margin-top:40px;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:28px 32px">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text3);font-family:var(--mono);margin-bottom:16px">Who this is for</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="display:flex;gap:10px;font-size:14px;color:var(--text2)"><span style="color:var(--green);flex-shrink:0">✓</span>Getting 500+ website visitors/month but conversion is low</div>
+        <div style="display:flex;gap:10px;font-size:14px;color:var(--text2)"><span style="color:var(--green);flex-shrink:0">✓</span>Ranking below top 3 in a competitive category</div>
+        <div style="display:flex;gap:10px;font-size:14px;color:var(--text2)"><span style="color:var(--green);flex-shrink:0">✓</span>Ready for a 12-month structured growth engagement</div>
+        <div style="display:flex;gap:10px;font-size:14px;color:var(--text2)"><span style="color:var(--green);flex-shrink:0">✓</span>Want SEO and CRO compounding together, not separately</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUGGESTION TOOL -->
+<div class="pricing-section alt">
+  <div class="container">
+    <div class="suggest-tool">
+      <div class="suggest-tool-title">Not sure which service fits your situation?</div>
+      <div class="suggest-tool-sub">Answer 3 questions and we'll point you in the right direction.</div>
+
+      <div class="sq" id="sq1">
+        <div class="sq-label">Q1 — How many locations does your business have?</div>
+        <div class="sq-options">
+          <button class="sq-btn" data-q="1" data-v="single" onclick="selectOpt(this)">Just one</button>
+          <button class="sq-btn" data-q="1" data-v="multi" onclick="selectOpt(this)">2 to 5</button>
+          <button class="sq-btn" data-q="1" data-v="many" onclick="selectOpt(this)">6 or more</button>
+        </div>
+      </div>
+
+      <div class="sq" id="sq2">
+        <div class="sq-label">Q2 — What's your biggest challenge right now?</div>
+        <div class="sq-options">
+          <button class="sq-btn" data-q="2" data-v="traffic" onclick="selectOpt(this)">Not enough people finding me</button>
+          <button class="sq-btn" data-q="2" data-v="convert" onclick="selectOpt(this)">People find me but don't convert</button>
+          <button class="sq-btn" data-q="2" data-v="both" onclick="selectOpt(this)">Both equally</button>
+        </div>
+      </div>
+
+      <div class="sq" id="sq3">
+        <div class="sq-label">Q3 — What's your monthly marketing budget?</div>
+        <div class="sq-options">
+          <button class="sq-btn" data-q="3" data-v="low" onclick="selectOpt(this)">Under S$1,500</button>
+          <button class="sq-btn" data-q="3" data-v="mid" onclick="selectOpt(this)">S$1,500 – S$3,000</button>
+          <button class="sq-btn" data-q="3" data-v="high" onclick="selectOpt(this)">S$3,000+</button>
+          <button class="sq-btn" data-q="3" data-v="unsure" onclick="selectOpt(this)">Not sure yet</button>
+        </div>
+      </div>
+
+      <div class="suggest-result" id="suggest-result">
+        <div class="suggest-result-label">Our suggestion</div>
+        <div class="suggest-result-text" id="suggest-text"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="pricing-section">
+  <div class="container" style="max-width:740px">
+    <div class="section-header" style="text-align:center">
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How long before I see ranking improvements on Google Maps?<span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Initial movement typically appears within 6–10 weeks. Meaningful improvements (top 5) usually take 3–4 months. We include a 90-day performance clause — if there is no measurable ranking improvement by Day 90, you can exit with 30 days notice. Results consistently appear before Day 90 with our system.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Is there a contract lock-in?<span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">12-month agreements with a 90-day performance clause. If we have not moved your ranking within 90 days, you can exit with 30 days notice — no penalty. We are confident enough in the system to offer this.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do I need Local SEO, CRO, or both?<span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">If your website gets fewer than 300 visitors a month, focus on Local SEO first — you need more traffic before optimising conversion. If you're getting 500+ visitors a month but your phone isn't ringing proportionally, add CRO. If you need both, the Full Growth System runs them simultaneously. The free audit will tell you which is the higher priority for your specific situation.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How much of my time does this require each week?<span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">For Local SEO packages: approximately 15–30 minutes per week, depending on tier. Mostly reviewing and approving things we have already drafted. You take photos of your work. We write everything else. For CRO: monthly calls and approvals before implementation. The system is designed to run without you.</div></div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+      <p style="font-size:15px;color:var(--text2);margin-bottom:20px">Still have questions? The free audit is the best starting point — it gives us both the data to have a specific, useful conversation.</p>
+      <a href="/audit.html" class="btn btn-amber btn-lg" onclick="gtag('event','cta_click',{'page':'services','cta':'faq-cta'})">Get Your Free Audit (worth S$299) →</a>
+      <div style="margin-top:14px">
+        <a href="https://cal.com/vanguardeer-pte-ltd-5v1v0x/30min" target="_blank" rel="noopener" style="font-size:13px;color:var(--text3);text-decoration:underline;text-underline-offset:3px">Or book a 30-minute call directly →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name"><em>Vanguardeer</em></div>
+        <div class="footer-brand-sub">Strategy. Execution. Growth.</div>
+        <div class="footer-brand-desc">Local SEO and CRO for Singapore SMEs. We fix why customers can't find you — and why they don't convert when they do.</div>
+        <div class="footer-contact"><span class="footer-contact-icon">📞</span><a href="tel:+6596960063">+65 9696 0063</a></div>
+        <div class="footer-contact"><span class="footer-contact-icon">✉️</span><a href="mailto:enquiries@vanguardeer.com">enquiries@vanguardeer.com</a></div>
+      </div>
+      <div>
+        <div class="fcol-title">Services</div>
+        <a href="/services.html" class="flink">Local SEO</a>
+        <a href="/services.html" class="flink">CRO</a>
+        <a href="/services.html" class="flink">Full Growth System</a>
+        <a href="/audit.html" class="flink">Free Audit</a>
+      </div>
+      <div>
+        <div class="fcol-title">Company</div>
+        <a href="/insights/" class="flink">Insights</a>
+        <a href="/about.html" class="flink">About</a>
+        <a href="/privacy.html" class="flink">Privacy Policy</a>
+        <a href="/terms.html" class="flink">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Vanguardeer. All rights reserved.</span>
+      <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20);});
+const h=document.getElementById('hamburger'),d=document.getElementById('mobile-drawer');
+h.addEventListener('click',()=>{h.classList.toggle('open');d.classList.toggle('open');});
+d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{h.classList.remove('open');d.classList.remove('open');}));
+
+// Tab switching
+function showService(id, btn){
+  document.querySelectorAll('.svc-tab-top').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.svc-panel-top').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-'+id+'-top').classList.add('active');
+  gtag('event','tab_click',{'tab':id,'page':'services'});
+}
+
+// FAQ
+function toggleFaq(el){
+  const item=el.closest('.faq-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+
+// Suggestion tool
+const answers={};
+function selectOpt(btn){
+  const q=btn.dataset.q, v=btn.dataset.v;
+  btn.closest('.sq-options').querySelectorAll('.sq-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  answers[q]=v;
+  gtag('event','calc_use',{'tool':'pricing-suggest','q':q,'v':v});
+  if(answers['1']&&answers['2']&&answers['3'])showSuggestion();
+}
+function showSuggestion(){
+  const q1=answers['1'],q2=answers['2'],q3=answers['3'];
+  let text='';
+  if(q2==='both'||q3==='high'){
+    text='The <strong>Full Growth System</strong> is likely your best fit — Local SEO and CRO running together produce compounding results that neither achieves alone. Let\'s talk about your specific numbers.';
+  } else if(q2==='convert'){
+    text='Your priority is <strong>CRO (Conversion Rate Optimisation)</strong>. Start with the Conversion Leak Audit (S$3,500) to identify exactly what\'s causing visitors to leave — then decide whether to implement fixes yourself or engage the retainer.';
+  } else if(q2==='traffic'&&q3==='low'){
+    text='The <strong>Local SEO Essentials</strong> package (S$1,200/mo) is the right starting point — it covers the Google Business Profile and Maps foundations that move the needle most for single-location businesses.';
+  } else if(q2==='traffic'&&q1==='single'){
+    text='The <strong>Local SEO Growth</strong> package (S$2,400/mo) covers your full local footprint — Maps, Carousell, Facebook Groups, reviews, and content pages. It\'s our most popular tier for a reason.';
+  } else {
+    text='The <strong>Local SEO Growth</strong> package (S$2,400/mo) is our most popular starting point and likely fits your situation. The free audit will confirm whether to go higher or lower based on your actual competitive position.';
+  }
+  document.getElementById('suggest-text').innerHTML=text;
+  const r=document.getElementById('suggest-result');
+  r.classList.add('show');
+  r.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>
