@@ -1,7 +1,8 @@
-# Cloudflare Worker config for Vanguardeer
-# Deploy worker:  npx wrangler deploy
-# Set secrets:    npx wrangler secret put ANTHROPIC_API_KEY
-#                 npx wrangler secret put ADMIN_SECRET
+# Cloudflare config for Vanguardeer
+# Pages site deploys automatically via Git (push to main → live on vanguardeer.com)
+# Worker (chat + reports): npx wrangler deploy
+# Set secrets:             npx wrangler secret put ANTHROPIC_API_KEY
+#                          npx wrangler secret put ADMIN_SECRET
 
 name = "vanguardeer-chat"
 main = "worker.js"

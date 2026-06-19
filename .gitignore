@@ -4,12 +4,10 @@
 # Wrangler local state (contains auth tokens, do not commit)
 .wrangler/
 
-# Deployment artifacts (generated, not source)
+# Legacy direct-upload artifacts (no longer used — Git-connected Pages deploys from root)
 vanguardeer-deploy/
 vanguardeer-deploy.zip
-
-# Old Pages Functions attempt (non-functional with direct upload)
-functions/
+vanguardeer-deploy-new.zip
 
 # Private business data
 *.xlsx
