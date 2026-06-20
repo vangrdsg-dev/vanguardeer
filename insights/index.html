@@ -62,6 +62,7 @@
 @media(max-width:1024px){.articles-grid{grid-template-columns:1fr 1fr}.a-card.featured{grid-column:span 2}}
 @media(max-width:768px){.articles-grid{grid-template-columns:1fr}.a-card.featured{grid-column:span 1}}
 </style>
+<link rel="stylesheet" href="/chat.css">
 </head>
 <body>
 <div id="bar"><a href="/audit.html">⚡ Free Digital Footprint Audit — worth S$299. Claim yours →</a></div>
@@ -261,5 +262,6 @@ const h=document.getElementById('hamburger'),d=document.getElementById('mobile-d
 h.addEventListener('click',()=>{h.classList.toggle('open');d.classList.toggle('open');});
 d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{h.classList.remove('open');d.classList.remove('open');}));
 </script>
+<script src="/chat.js" defer></script>
 </body>
 </html>

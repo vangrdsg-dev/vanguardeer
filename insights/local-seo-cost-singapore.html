@@ -52,6 +52,7 @@
 .flag-red{color:var(--red);font-weight:700}
 .flag-green{color:var(--green);font-weight:700}
 </style>
+<link rel="stylesheet" href="/chat.css">
 </head>
 <body>
 <div id="bar"><a href="/audit.html">⚡ Free Digital Footprint Audit — worth S$299. Claim yours →</a></div>
@@ -279,5 +280,6 @@ d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{h.classList.r
 let dp={25:false,50:false,75:false,100:false};
 window.addEventListener('scroll',()=>{const p=Math.round((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100);[25,50,75,100].forEach(v=>{if(p>=v&&!dp[v]){dp[v]=true;gtag('event','scroll_depth',{'depth':v,'page':'article-seo-cost'});}});});
 </script>
+<script src="/chat.js" defer></script>
 </body>
 </html>

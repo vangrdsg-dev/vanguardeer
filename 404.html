@@ -21,6 +21,7 @@
 .notfound-link{font-size:13px;color:var(--text2);padding:8px 16px;border:1px solid var(--border2);border-radius:8px;transition:all 0.15s}
 .notfound-link:hover{color:var(--amber);border-color:var(--amber-b);background:var(--amber-dim)}
 </style>
+<link rel="stylesheet" href="/chat.css">
 </head>
 <body>
 <div id="bar"><a href="/audit.html">⚡ Free Digital Footprint Audit — worth S$299. Claim yours →</a></div>
@@ -99,5 +100,6 @@ const h=document.getElementById('hamburger'),d=document.getElementById('mobile-d
 h.addEventListener('click',()=>{h.classList.toggle('open');d.classList.toggle('open');});
 d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{h.classList.remove('open');d.classList.remove('open');}));
 </script>
+<script src="/chat.js" defer></script>
 </body>
 </html>

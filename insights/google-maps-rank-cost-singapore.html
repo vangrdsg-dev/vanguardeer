@@ -48,6 +48,7 @@
 .fix-title{font-family:var(--display);font-size:17px;font-weight:800;color:var(--text);margin-bottom:10px}
 .fix-body{font-size:14px;color:var(--text2);line-height:1.7}
 </style>
+<link rel="stylesheet" href="/chat.css">
 </head>
 <body>
 <div id="bar"><a href="/audit.html">⚡ Free Digital Footprint Audit — worth S$299. Claim yours →</a></div>
@@ -246,5 +247,6 @@ d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{h.classList.r
 let dp={25:false,50:false,75:false,100:false};
 window.addEventListener('scroll',()=>{const p=Math.round((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100);[25,50,75,100].forEach(v=>{if(p>=v&&!dp[v]){dp[v]=true;gtag('event','scroll_depth',{'depth':v,'page':'article-maps-cost'});}});});
 </script>
+<script src="/chat.js" defer></script>
 </body>
 </html>

@@ -41,6 +41,7 @@
 <link rel="stylesheet" href="/shared.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2NXT9XWLET"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2NXT9XWLET');</script>
+<link rel="stylesheet" href="/chat.css">
 </head>
 <body>
 <div id="bar"><a href="/audit.html">⚡ Free Digital Footprint Audit — worth S$299. Claim yours →</a></div>
@@ -233,5 +234,6 @@ d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{h.classList.r
 let dp={25:false,50:false,75:false,100:false};
 window.addEventListener('scroll',()=>{const p=Math.round((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100);[25,50,75,100].forEach(v=>{if(p>=v&&!dp[v]){dp[v]=true;gtag('event','scroll_depth',{'depth':v,'page':'article-reviews'});}});});
 </script>
+<script src="/chat.js" defer></script>
 </body>
 </html>
