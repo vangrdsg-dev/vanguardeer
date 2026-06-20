@@ -34,7 +34,6 @@
   </div>
   <button class="chat-toggle" onclick="chatToggle()" aria-label="Open chat">
     💬
-    <span class="chat-badge">1</span>
   </button>
 </div>`;
 
