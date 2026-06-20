@@ -96,6 +96,9 @@ h1,h2,h3,h4{font-family:var(--display)}
 .article-content strong{color:var(--text);font-weight:700}
 .article-content a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
 .article-content a:hover{color:var(--amber2)}
+.article-content .btn,.article-content .btn:hover{text-decoration:none}
+.article-content .btn-amber,.article-content .btn-amber:hover{color:#0B1F3A}
+.article-content .btn-navy,.article-content .btn-navy:hover{color:#FFFFFF}
 
 /* ═══ CALLOUT BOXES ═════════════════════════════════════════ */
 .callout{border-radius:12px;padding:24px 28px;margin:32px 0}
