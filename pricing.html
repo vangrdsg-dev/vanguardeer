@@ -91,6 +91,7 @@
 @media(max-width:1024px){.pricing-grid{grid-template-columns:1fr 1fr}.fgs-block{grid-template-columns:1fr}}
 @media(max-width:768px){.pricing-grid{grid-template-columns:1fr}.sq-options{flex-direction:column}.fgs-block{padding:32px 24px}}
 </style>
+<link rel="stylesheet" href="/chat.css">
 </head>
 <body>
 <div id="bar"><a href="/audit.html">⚡ Free Digital Footprint Audit — worth S$299. Claim yours →</a></div>
@@ -99,7 +100,7 @@
     <a href="/" class="nav-logo"><img src="/brand/logos/logo-horizontal-tagline.svg" alt="Vanguardeer" width="160" height="52"></a>
     <div class="nav-links">
       <a href="/#how" class="nav-link">How It Works</a>
-      <a href="/#services" class="nav-link">Services</a>
+      <a href="/services.html" class="nav-link">Services</a>
       <a href="/insights/" class="nav-link">Insights</a>
       <a href="/about.html" class="nav-link">About</a>
       <a href="/pricing.html" class="nav-link active">Pricing</a>
@@ -426,12 +427,13 @@ function showSuggestion(){
   else if(q2==='convert'){text='Your priority is <strong>CRO</strong>. Start with the Conversion Leak Audit (S$3,500) to identify exactly what\'s causing visitors to leave — then decide whether to implement fixes yourself or engage the retainer.';}
   else if(q2==='traffic'&&q3==='low'){text='The <strong>Essentials</strong> Local SEO package (S$1,200/mo) is the right starting point — it covers the Google Business Profile and Maps foundations that move the needle most for single-location businesses.';}
   else if(q2==='traffic'&&q1==='single'){text='The <strong>Growth</strong> package (S$2,400/mo) covers your full local footprint — Maps, Carousell, Facebook Groups, reviews, and content pages. It\'s our most popular tier for a reason.';}
-  else{text='The <strong>Growth</strong> package (S$2,400/mo) is our most popular starting point and likely fits your situation. The free audit will confirm whether to go higher or lower based on your actual competitive position.');}
+  else{text='The <strong>Growth</strong> package (S$2,400/mo) is our most popular starting point and likely fits your situation. The free audit will confirm whether to go higher or lower based on your actual competitive position.';}
   document.getElementById('suggest-text').innerHTML=text;
   const r=document.getElementById('suggest-result');
   r.classList.add('show');
   r.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 </script>
+<script src="/chat.js" defer></script>
 </body>
 </html>

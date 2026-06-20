@@ -14,6 +14,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <link rel="canonical" href="https://vanguardeer.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2NXT9XWLET"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2NXT9XWLET');</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -482,8 +484,8 @@ body.is-audit .seg-audit{display:block}body.is-audit .seg-default{display:none}
 .fcol-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);margin-bottom:14px;font-family:var(--mono)}
 .flink{display:block;font-size:13px;color:var(--text2);margin-bottom:9px;transition:color 0.15s}
 .flink:hover{color:var(--amber)}
-.fcontact{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px;color:var(--text2)}
-.fcontact-icon{color:var(--amber);font-size:14px;flex-shrink:0}
+.footer-contact{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px;color:var(--text2)}
+.footer-contact-icon{color:var(--amber);font-size:14px;flex-shrink:0}
 .footer-bottom{padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--text3);font-family:var(--mono)}
 
 /* Chatbot styles moved to /chat.css */
@@ -820,11 +822,11 @@ body.is-audit .seg-audit{display:block}body.is-audit .seg-default{display:none}
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" id="form-time" name="form_time">
-            <input type="hidden" id="utm-capture" name="utm_data">
+            <input type="hidden" id="utm-capture" name="utm">
             <div class="frow">
               <div class="fg">
                 <label>Business Name *</label>
-                <input type="text" name="business_name" placeholder="Your business" required>
+                <input type="text" name="business" placeholder="Your business" required>
               </div>
               <div class="fg">
                 <label>Industry *</label>
@@ -861,7 +863,7 @@ body.is-audit .seg-audit{display:block}body.is-audit .seg-default{display:none}
             </div>
             <div class="fg">
               <label>WhatsApp Number</label>
-              <input type="tel" name="whatsapp" placeholder="+65 9XXX XXXX">
+              <input type="tel" name="phone" placeholder="+65 9XXX XXXX">
               <div style="font-size:10px;color:var(--text3);margin-top:4px;font-family:var(--mono)">Optional — for faster audit delivery</div>
             </div>
             <div class="fg" style="display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px">
@@ -1033,6 +1035,151 @@ body.is-audit .seg-audit{display:block}body.is-audit .seg-default{display:none}
 
 <!-- AI CHATBOT -->
 <script src="/chat.js" defer></script>
+
+<script>
+(function(){
+  'use strict';
+
+  // ── Bar close ─────────────────────────────────────────────
+  var barClose = document.getElementById('bar-close');
+  var bar = document.getElementById('bar');
+  var nav = document.getElementById('nav');
+  if(sessionStorage.getItem('bar-closed')){
+    bar.classList.add('hidden');
+    nav.classList.add('bar-gone');
+  }
+  barClose.addEventListener('click', function(){
+    bar.classList.add('hidden');
+    nav.classList.add('bar-gone');
+    sessionStorage.setItem('bar-closed','1');
+  });
+
+  // ── Nav scroll ────────────────────────────────────────────
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('solid', window.scrollY > 20);
+  }, {passive:true});
+
+  // ── Hamburger / mobile drawer ─────────────────────────────
+  var ham = document.getElementById('hamburger');
+  var drawer = document.getElementById('mobile-drawer');
+  ham.addEventListener('click', function(){
+    ham.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      ham.classList.remove('open');
+      drawer.classList.remove('open');
+    });
+  });
+
+  // ── Segment detection ─────────────────────────────────────
+  var urlParams = new URLSearchParams(window.location.search);
+  var src = urlParams.get('utm_source') || '';
+  var ref = document.referrer || '';
+  if(src === 'google' || ref.includes('google.com')){
+    document.body.classList.add('is-google');
+  } else if(src === 'linkedin' || ref.includes('linkedin.com')){
+    document.body.classList.add('is-linkedin');
+  } else if(src === 'carousell' || ref.includes('carousell.sg') || ref.includes('carousell.com')){
+    document.body.classList.add('is-carousell');
+  }
+
+  // ── FAQ accordion ─────────────────────────────────────────
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = q.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // ── Revenue calculator ────────────────────────────────────
+  document.getElementById('calc-btn').addEventListener('click', function(){
+    var rev = parseFloat(document.getElementById('calc-rev').value) || 0;
+    var rank = document.getElementById('calc-rank').value;
+    if(!rev || !rank){ return; }
+    var lost = 0, note = '';
+    if(rank === 'top3'){
+      lost = 0; note = "You're in the top 3 — optimise for conversion next.";
+    } else if(rank === '4'){
+      lost = rev * 0.15; note = 'Ranking 4–6 means missing ~15% of possible traffic.';
+    } else if(rank === '7'){
+      lost = rev * 0.30; note = 'Position 7–10 gets less than 5% of clicks vs top 3.';
+    } else if(rank === '11'){
+      lost = rev * 0.45; note = 'Below position 10 is effectively invisible for most searchers.';
+    } else if(rank === '0'){
+      lost = rev * 0.60; note = "Not listed on Maps — you're missing the entire local search channel.";
+    }
+    var numEl = document.getElementById('calc-num');
+    var noteEl = document.getElementById('calc-note');
+    var resultEl = document.getElementById('calc-result');
+    if(rank === 'top3'){
+      numEl.textContent = 'Great position!';
+      numEl.style.color = '#22C55E';
+    } else {
+      numEl.textContent = 'S$' + Math.round(lost).toLocaleString() + '/mo';
+      numEl.style.color = '#EF4444';
+    }
+    noteEl.textContent = note;
+    resultEl.classList.add('show');
+    if(typeof gtag !== 'undefined') gtag('event','calc_use',{page:'homepage',rev:rev,rank:rank});
+  });
+
+  // ── Audit form ────────────────────────────────────────────
+  var captchaA, captchaB, captchaC;
+  function genCaptcha(){
+    captchaA = Math.floor(Math.random() * 9) + 1;
+    captchaB = Math.floor(Math.random() * 9) + 1;
+    captchaC = captchaA + captchaB;
+    document.getElementById('captcha-q').textContent = captchaA + ' + ' + captchaB + ' = ?';
+  }
+  genCaptcha();
+
+  // Set hidden fields
+  document.getElementById('form-time').value = new Date().toISOString();
+  var utmData = {};
+  ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(p){
+    var v = urlParams.get(p);
+    if(v) utmData[p] = v;
+  });
+  document.getElementById('utm-capture').value = JSON.stringify(utmData);
+
+  document.getElementById('audit-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    var ans = parseInt(document.getElementById('captcha-ans').value, 10);
+    if(ans !== captchaC){
+      alert('Please solve the maths question correctly.');
+      genCaptcha();
+      document.getElementById('captcha-ans').value = '';
+      return;
+    }
+    var btn = document.getElementById('form-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      var fd = new FormData(this);
+      var data = {};
+      fd.forEach(function(v,k){ data[k] = v; });
+      var resp = await fetch(this.action, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+      });
+      if(!resp.ok){ throw new Error('Server error ' + resp.status); }
+      document.getElementById('form-wrap').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      if(typeof gtag !== 'undefined') gtag('event','form_submit_success',{page:'homepage'});
+    } catch(err){
+      btn.disabled = false;
+      btn.textContent = 'Send Me My Free Audit →';
+      alert('Something went wrong. Please email enquiries@vanguardeer.com or try again.');
+    }
+  });
+
+})();
+</script>
 
 </body>
 </html>

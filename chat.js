@@ -94,11 +94,10 @@
     var system = 'You are the Vanguardeer AI assistant for Vanguardeer, a Singapore Local SEO and CRO agency. Be concise, warm, direct. Never salesy.\n\nKey facts:\n- Local SEO packages: Essentials S$1,200/mo · Growth S$2,400/mo · Dominance S$4,200/mo\n- CRO: Conversion Leak Audit S$3,500 once · Implementation Retainer S$4,500/mo · Fractional Growth Director custom\n- Full Growth System: SEO + CRO combined, custom quote, min 12 months\n- Free Digital Footprint Audit worth S$299, 24hr delivery, no obligation\n- 90-day performance clause on all Local SEO packages\n- Founder: Nor Azam Ahmad, 25+ years, Singapore & ASEAN\n- Email: enquiries@vanguardeer.com · Phone: +65 9696 0063\n- Free audit: /audit.html · Services: /services.html\n\nKeep responses under 120 words. Direct audit requests to /audit.html. Never make up facts.';
 
     try {
-      var response = await fetch('https://api.anthropic.com/v1/messages', {
+      var response = await fetch('https://vanguardeer-chat.vanguardeer.workers.dev/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
           max_tokens: 300,
           system: system,
           messages: [{ role: 'user', content: userMsg }]
