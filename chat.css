@@ -3,7 +3,7 @@
    Loaded on all pages via <link rel="stylesheet" href="/chat.css">
    ════════════════════════════════════════════════════════════ */
 
-#chat-bubble{position:fixed;bottom:28px;right:28px;z-index:2000;transition:opacity 0.3s,transform 0.3s}
+#chat-bubble{position:fixed;bottom:28px;right:28px;z-index:1001;transition:opacity 0.3s,transform 0.3s}
 #chat-bubble.chat-hidden{opacity:0;pointer-events:none;transform:scale(0.8)}
 
 .chat-toggle{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#0B1F3A,#1A3A60);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(11,31,58,0.3);transition:all 0.2s;font-size:22px}
