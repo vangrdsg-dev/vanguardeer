@@ -10,7 +10,7 @@
   // ── Inject HTML ────────────────────────────────────────────
   const html = `
 <div id="chat-bubble">
-  <button class="chat-dismiss" aria-label="Hide chat" title="Hide chat" onclick="chatHide()">✕</button>
+  <button class="chat-dismiss" id="chat-dismiss" aria-label="Hide chat" title="Hide chat">✕</button>
   <div class="chat-window" id="chat-window">
     <div class="chat-head">
       <div class="chat-head-avatar">🤖</div>
@@ -18,26 +18,50 @@
         <h4>Vanguardeer AI</h4>
         <p>Typically replies in seconds</p>
       </div>
-      <button class="chat-head-close" onclick="chatClose()" aria-label="Close chat">✕</button>
+      <button class="chat-head-close" id="chat-close" aria-label="Close chat">✕</button>
     </div>
     <div class="chat-msgs" id="chat-msgs"></div>
     <div class="chat-qs" id="chat-qs">
-      <button class="chat-q" onclick="chatQ(this)">What's in the free audit?</button>
-      <button class="chat-q" onclick="chatQ(this)">How much does it cost?</button>
-      <button class="chat-q" onclick="chatQ(this)">How long to see results?</button>
-      <button class="chat-q" onclick="chatQ(this)">Do I need SEO or CRO?</button>
+      <button class="chat-q">What's in the free audit?</button>
+      <button class="chat-q">How much does it cost?</button>
+      <button class="chat-q">How long to see results?</button>
+      <button class="chat-q">Do I need SEO or CRO?</button>
     </div>
     <div class="chat-input-row">
       <input id="chat-input" placeholder="Ask anything…" autocomplete="off">
-      <button id="chat-send" onclick="chatSend()">Send</button>
+      <button id="chat-send">Send</button>
     </div>
   </div>
-  <button class="chat-toggle" onclick="chatToggle()" aria-label="Open chat">
+  <button class="chat-toggle" id="chat-toggle-btn" aria-label="Open chat">
     💬
   </button>
 </div>`;
 
   document.body.insertAdjacentHTML('beforeend', html);
+
+  // ── Bind all button events after injection ─────────────────
+  document.getElementById('chat-dismiss').addEventListener('click', function(e){
+    e.stopPropagation();
+    chatHide();
+  });
+  document.getElementById('chat-close').addEventListener('click', function(e){
+    e.stopPropagation();
+    chatClose();
+  });
+  document.getElementById('chat-toggle-btn').addEventListener('click', function(e){
+    e.stopPropagation();
+    chatToggle();
+  });
+  document.getElementById('chat-send').addEventListener('click', function(){
+    chatSend();
+  });
+  document.getElementById('chat-qs').addEventListener('click', function(e){
+    if(e.target.classList.contains('chat-q')){
+      const q = e.target.textContent;
+      e.target.remove();
+      sendMessage(q);
+    }
+  });
 
   // ── Inject restore button into footer ──────────────────────
   const footerBottom = document.querySelector('.footer-bottom');
@@ -105,12 +129,7 @@
     if (r) r.classList.remove('visible');
   };
 
-  // ── Quick question buttons ─────────────────────────────────
-  window.chatQ = function(btn) {
-    const q = btn.textContent;
-    btn.remove();
-    sendMessage(q);
-  };
+  // Quick question clicks handled via event delegation on #chat-qs
 
   // ── Send ───────────────────────────────────────────────────
   window.chatSend = function() {
