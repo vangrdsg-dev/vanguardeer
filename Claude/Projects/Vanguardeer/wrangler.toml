@@ -1,7 +1,0 @@
-# Cloudflare Worker config for Vanguardeer chat proxy
-# Deploy: npx wrangler deploy
-# Add secret: npx wrangler secret put ANTHROPIC_API_KEY
-
-name = "vanguardeer-chat"
-main = "worker.js"
-compatibility_date = "2024-01-01"

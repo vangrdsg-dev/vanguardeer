@@ -12,3 +12,9 @@ vanguardeer-deploy-new.zip
 # Private business data
 *.xlsx
 *.csv
+
+# Accidental nested repo path — never commit
+Claude/
+
+# Disposable patch/working scripts
+patch_*.py
