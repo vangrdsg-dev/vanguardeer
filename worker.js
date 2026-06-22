@@ -107,6 +107,7 @@ export default {
 
     if (path === "/" || path === "/api/chat")               return handleChat(request, env);
     if (path === "/audit/request" && method === "POST")     return handleAuditRequest(request, env, ctx);
+    if (path === "/lead/request" && method === "POST")      return handleLeadRequest(request, env);
 
     // Admin auth routes (no session required)
     if (path === "/admin" && method === "GET")              return handleAdminLogin(request, env);
@@ -393,6 +394,128 @@ async function notifyAzam(report, env) {
         <tr><td><strong>Password</strong></td><td><strong>${report.password}</strong></td></tr>
       </table><br>
       <a href="https://vanguardeer-chat.vanguardeer.workers.dev/admin" style="background:#C8A44D;color:#000;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:bold;">Open Admin Dashboard →</a>`,
+  });
+}
+
+// ── Lead Request Handler ──────────────────────────────────────────────────────
+
+async function handleLeadRequest(request, env) {
+  const origin = request.headers.get("Origin") || "";
+  const corsOk = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  const corsHeaders = {
+    "Access-Control-Allow-Origin": corsOk,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+
+  let body;
+  try { body = await request.json(); } catch {
+    return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+  }
+
+  // Basic validation
+  const required = ["name", "business", "email", "industry"];
+  for (const f of required) {
+    if (!body[f]) return new Response(JSON.stringify({ error: `Missing field: ${f}` }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+  }
+
+  // Lead scoring
+  let score = 0;
+  const role = (body.role || "").toLowerCase();
+  if (role.includes("founder") || role.includes("owner") || role.includes("director") || role.includes("ceo") || role === "yes") score += 20;
+  else if (role.includes("manager") || role.includes("head")) score += 10;
+  else if (role.includes("marketing")) score += 5;
+
+  const cv = (body.customer_value || "").toLowerCase();
+  if (cv.includes("20000") || cv.includes("20k") || cv.includes("20,000") || parseInt(cv) >= 20000) score += 25;
+  else if (cv.includes("10000") || cv.includes("10k") || parseInt(cv) >= 10000) score += 20;
+  else if (cv.includes("5000") || cv.includes("5k") || parseInt(cv) >= 5000) score += 15;
+  else if (cv.includes("1000") || parseInt(cv) >= 1000) score += 5;
+
+  const rev = (body.revenue_range || "").toLowerCase();
+  if (rev.includes("500") && (rev.includes("k") || rev.includes("000"))) score += 25;
+  else if (rev.includes("200")) score += 20;
+  else if (rev.includes("100")) score += 15;
+  else if (rev.includes("50")) score += 10;
+
+  const budget = (body.budget_readiness || "").toLowerCase();
+  if (budget.includes("12") || budget.includes("12,000") || budget.includes("12k")) score += 25;
+  else if (budget.includes("6") || budget.includes("6,000") || budget.includes("6k")) score += 20;
+  else if (budget.includes("3") || budget.includes("3,000") || budget.includes("3k")) score += 10;
+  else if (budget.includes("not sure") || budget.includes("willing")) score += 10;
+
+  const timeline = (body.timeline || "").toLowerCase();
+  if (timeline.includes("this month") || timeline.includes("now") || timeline.includes("immediate")) score += 15;
+  else if (timeline.includes("30") || timeline.includes("60") || timeline.includes("soon")) score += 10;
+  else if (timeline.includes("3") || timeline.includes("quarter")) score += 5;
+
+  const priority = score >= 80 ? "HIGH PRIORITY 🔴" : score >= 60 ? "QUALIFIED 🟡" : score >= 40 ? "NURTURE 🟢" : "LOW FIT ⚪";
+  const nextAction = score >= 80
+    ? "Review website and competitors. Prepare Revenue Leak Intelligence Brief immediately."
+    : score >= 60
+    ? "Send follow-up questions or invite to fit call."
+    : score >= 40
+    ? "Send educational content. Monitor for re-engagement."
+    : "Do not prioritise unless there is a strong strategic reason.";
+
+  // Store lead in KV
+  const leadId = uid();
+  const leadData = { id: leadId, ...body, score, priority, submitted_at: new Date().toISOString() };
+  await env.AUDIT_REPORTS.put(`lead:${leadId}`, JSON.stringify(leadData), { expirationTtl: 7776000 }).catch(() => {});
+
+  // Notify owner
+  const s = (v) => esc(String(v || "—"));
+  await sendEmail(env, {
+    subject: `New Vanguardeer Lead: ${s(body.business)} — ${s(body.industry)} — ${s(body.selected_offer || body.source_page)}`,
+    html: `
+<div style="font-family:Arial,sans-serif;max-width:640px;color:#0B1F3A">
+<div style="background:#0B1F3A;padding:20px 24px;border-radius:8px 8px 0 0">
+  <h2 style="color:#C8A44D;margin:0;font-size:18px">New Lead — ${s(priority)}</h2>
+  <p style="color:rgba(255,255,255,0.6);margin:6px 0 0;font-size:13px">Score: ${score}/100</p>
+</div>
+<div style="border:1px solid #e8e3d8;border-top:none;padding:24px;border-radius:0 0 8px 8px">
+  <h3 style="color:#0B1F3A;font-size:14px;margin:0 0 16px;text-transform:uppercase;letter-spacing:0.05em">Contact Details</h3>
+  <table cellpadding="6" style="width:100%;font-size:14px">
+    <tr><td style="color:#5B6470;width:160px">Name</td><td><strong>${s(body.name)}</strong></td></tr>
+    <tr><td style="color:#5B6470">Business</td><td><strong>${s(body.business)}</strong></td></tr>
+    <tr><td style="color:#5B6470">Website</td><td><a href="${s(body.website)}">${s(body.website)}</a></td></tr>
+    <tr><td style="color:#5B6470">Email</td><td><a href="mailto:${s(body.email)}">${s(body.email)}</a></td></tr>
+    <tr><td style="color:#5B6470">Phone/WhatsApp</td><td>${s(body.phone)}</td></tr>
+    <tr><td style="color:#5B6470">Industry</td><td>${s(body.industry)}</td></tr>
+    <tr><td style="color:#5B6470">Role</td><td>${s(body.role)}</td></tr>
+  </table>
+  <hr style="border:none;border-top:1px solid #e8e3d8;margin:20px 0">
+  <h3 style="color:#0B1F3A;font-size:14px;margin:0 0 16px;text-transform:uppercase;letter-spacing:0.05em">Qualification Data</h3>
+  <table cellpadding="6" style="width:100%;font-size:14px">
+    <tr><td style="color:#5B6470;width:160px">Monthly Revenue</td><td>${s(body.revenue_range)}</td></tr>
+    <tr><td style="color:#5B6470">Customer Value</td><td>${s(body.customer_value)}</td></tr>
+    <tr><td style="color:#5B6470">Marketing Spend</td><td>${s(body.marketing_spend)}</td></tr>
+    <tr><td style="color:#5B6470">Budget Readiness</td><td><strong>${s(body.budget_readiness)}</strong></td></tr>
+    <tr><td style="color:#5B6470">Timeline</td><td>${s(body.timeline)}</td></tr>
+    <tr><td style="color:#5B6470">Selected Offer</td><td>${s(body.selected_offer)}</td></tr>
+    <tr><td style="color:#5B6470">Source Page</td><td>${s(body.source_page)}</td></tr>
+  </table>
+  <hr style="border:none;border-top:1px solid #e8e3d8;margin:20px 0">
+  <h3 style="color:#0B1F3A;font-size:14px;margin:0 0 16px;text-transform:uppercase;letter-spacing:0.05em">Context</h3>
+  <table cellpadding="6" style="width:100%;font-size:14px">
+    <tr><td style="color:#5B6470;width:160px">Biggest Bottleneck</td><td>${s(body.bottleneck)}</td></tr>
+    <tr><td style="color:#5B6470">Main Competitors</td><td>${s(body.competitors)}</td></tr>
+    <tr><td style="color:#5B6470">Message</td><td>${s(body.message)}</td></tr>
+    <tr><td style="color:#5B6470">UTM Data</td><td>${s(body.utm_data)}</td></tr>
+    <tr><td style="color:#5B6470">Submitted</td><td>${new Date().toLocaleString("en-SG",{timeZone:"Asia/Singapore"})}</td></tr>
+  </table>
+  <hr style="border:none;border-top:1px solid #e8e3d8;margin:20px 0">
+  <div style="background:#FAF8F2;border-left:4px solid #C8A44D;padding:16px 20px;border-radius:0 8px 8px 0">
+    <div style="font-size:12px;color:#5B6470;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px">Recommended Next Action</div>
+    <strong style="color:#0B1F3A;font-size:14px">${nextAction}</strong>
+  </div>
+</div>
+</div>`,
+  }).catch(() => {});
+
+  return new Response(JSON.stringify({ ok: true, score, priority }), {
+    status: 200,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
   });
 }
 

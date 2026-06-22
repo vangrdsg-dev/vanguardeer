@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Capture Sprint | 12-Week Revenue System Implementation | Vanguardeer</title>
+<meta name="description" content="A 12-week implementation sprint to help high-value businesses strengthen visibility, trust, conversion, lead qualification, and sales readiness. From S$15,000.">
+<link rel="canonical" href="https://vanguardeer.com/market-capture-sprint">
+<link rel="icon" href="/brand/logos/logo-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2NXT9XWLET"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2NXT9XWLET');</script>
+<link rel="stylesheet" href="/shared.css">
+<style>
+.page-hero{padding-top:calc(var(--total-offset) + 56px);padding-bottom:64px;background:#0B1F3A;position:relative;overflow:hidden}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 100% 80% at 50% 30%,black,transparent)}
+.page-hero-inner{position:relative;z-index:1;max-width:700px}
+.page-hero h1{font-family:var(--display);font-size:clamp(32px,4.5vw,56px);font-weight:900;color:#FFFFFF;line-height:1.08;margin-bottom:20px}
+.page-hero h1 em{color:var(--amber);font-style:normal}
+.page-hero p{font-size:17px;color:rgba(255,255,255,0.68);line-height:1.8;margin-bottom:32px;max-width:580px}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:8px}
+.hero-meta-item{font-size:13px;color:rgba(255,255,255,0.5);font-family:var(--mono);display:flex;align-items:center;gap:8px}
+.hero-meta-item strong{color:var(--amber)}
+
+.phase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.phase-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.phase-head{background:#0B1F3A;padding:20px 22px}
+.phase-num{font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(200,164,77,0.6);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px}
+.phase-title{font-family:var(--display);font-size:17px;font-weight:800;color:#FFFFFF}
+.phase-weeks{font-size:11px;color:rgba(255,255,255,0.35);font-family:var(--mono);margin-top:4px}
+.phase-body{padding:20px 22px}
+.phase-body ul{list-style:none}
+.phase-body li{font-size:13px;color:var(--text2);padding:6px 0;border-bottom:1px solid var(--border);padding-left:16px;position:relative}
+.phase-body li:last-child{border-bottom:none}
+.phase-body li::before{content:'→';position:absolute;left:0;color:var(--amber);font-size:11px}
+
+.outcome-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
+.outcome-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:24px;display:flex;gap:14px;align-items:flex-start}
+.outcome-icon{font-size:24px;flex-shrink:0;margin-top:2px}
+.outcome-text h3{font-family:var(--display);font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
+.outcome-text p{font-size:13px;color:var(--text2);line-height:1.6}
+
+.price-block{background:#0B1F3A;border-radius:20px;padding:40px;text-align:center;margin-top:56px}
+.price-label{font-size:11px;font-family:var(--mono);color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px}
+.price-amount{font-family:var(--display);font-size:48px;font-weight:900;color:var(--amber);margin-bottom:8px}
+.price-note{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.6}
+.price-disclaimer{font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--mono);margin-top:16px}
+
+.apply-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:40px}
+.as-step{text-align:center;padding:20px 12px}
+.as-num{font-family:var(--display);font-size:28px;font-weight:900;color:rgba(200,164,77,0.2);margin-bottom:8px}
+.as-label{font-size:12px;color:var(--text2);line-height:1.5;font-weight:600}
+
+@media(max-width:1024px){.phase-grid{grid-template-columns:repeat(2,1fr)}.apply-steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.phase-grid{grid-template-columns:1fr}.outcome-grid{grid-template-columns:1fr}.apply-steps{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<div id="bar">
+  Now accepting Q3 2026 clients — <a href="/revenue-leak-intelligence-brief.html">Request your Revenue Leak Intelligence Brief →</a>
+  <button id="bar-close" aria-label="Close">✕</button>
+</div>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/brand/logos/logo-horizontal.svg" alt="Vanguardeer" height="52"></a>
+    <div class="nav-links">
+      <a href="/ai-revenue-systems.html" class="nav-link">AI Revenue Systems</a>
+      <a href="/market-capture-sprint.html" class="nav-link active">Market Capture Sprint</a>
+      <a href="/patient-acquisition-system.html" class="nav-link">For Clinics</a>
+      <a href="/cyber-gtm-intelligence-system.html" class="nav-link">For Cyber Firms</a>
+      <a href="/insights/index.html" class="nav-link">Insights</a>
+      <a href="/about.html" class="nav-link">About</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a href="/revenue-leak-intelligence-brief.html" class="btn btn-amber btn-sm" style="display:none" data-desktop-cta>Request Intelligence Brief</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="/ai-revenue-systems.html" class="nav-link">AI Revenue Systems</a>
+  <a href="/market-capture-sprint.html" class="nav-link">Market Capture Sprint</a>
+  <a href="/patient-acquisition-system.html" class="nav-link">For Clinics</a>
+  <a href="/cyber-gtm-intelligence-system.html" class="nav-link">For Cyber Firms</a>
+  <a href="/insights/index.html" class="nav-link">Insights</a>
+  <a href="/about.html" class="nav-link">About</a>
+  <a href="/revenue-leak-intelligence-brief.html" class="btn btn-amber">Request Intelligence Brief</a>
+</div>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero-inner">
+      <div style="margin-bottom:20px">
+        <span class="badge" style="background:rgba(200,164,77,0.15);color:var(--amber);border:1px solid rgba(200,164,77,0.3)">12-Week Sprint</span>
+      </div>
+      <h1>Build the system that captures demand<br>before your competitors do.</h1>
+      <p>The Market Capture Sprint is a focused 12-week implementation programme that strengthens your visibility, trust signals, conversion journey, lead qualification, and sales readiness — for businesses that already have market demand but are losing qualified opportunities.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="/revenue-leak-intelligence-brief.html" class="btn btn-amber btn-lg" onclick="if(typeof gtag!=='undefined')gtag('event','market_capture_application_submit',{location:'hero'})">Apply for the Market Capture Sprint</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><strong>12</strong> weeks</div>
+        <div class="hero-meta-item">From <strong>S$15,000</strong></div>
+        <div class="hero-meta-item"><strong>4</strong> structured phases</div>
+        <div class="hero-meta-item"><strong>Q3 2026</strong> intake open</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Positioning -->
+<section class="section">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto;text-align:center">
+      <span class="badge badge-navy" style="margin-bottom:20px">What This Is</span>
+      <h2 style="font-family:var(--display);font-size:clamp(26px,3.5vw,40px);font-weight:800;color:var(--text);margin-bottom:20px;line-height:1.1">This is not an SEO package.<br>It is a revenue system implementation.</h2>
+      <p style="font-size:16px;color:var(--text2);line-height:1.8">The Market Capture Sprint is for businesses that already have market demand but are losing qualified opportunities because the buyer journey is weak, fragmented, or founder-dependent. We diagnose the leakage, build the system, install the operations, and optimise — in 12 focused weeks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Phases -->
+<section class="section alt">
+  <div class="container">
+    <div class="sh">
+      <span class="badge badge-amber">Four Phases</span>
+      <h2>Diagnose. Build. Automate. Optimise.</h2>
+    </div>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="phase-head">
+          <div class="phase-num">Phase 01</div>
+          <div class="phase-title">Diagnose</div>
+          <div class="phase-weeks">Weeks 1–3</div>
+        </div>
+        <div class="phase-body">
+          <ul>
+            <li>Revenue leakage audit</li>
+            <li>Competitor capture map</li>
+            <li>Buyer journey review</li>
+            <li>Search & local visibility review</li>
+            <li>Website conversion review</li>
+            <li>Trust signal gap analysis</li>
+            <li>Lead handling review</li>
+            <li>Sales readiness assessment</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-head">
+          <div class="phase-num">Phase 02</div>
+          <div class="phase-title">Build</div>
+          <div class="phase-weeks">Weeks 4–7</div>
+        </div>
+        <div class="phase-body">
+          <ul>
+            <li>Positioning refinement</li>
+            <li>Landing page improvements</li>
+            <li>Trust asset implementation</li>
+            <li>Review & reputation workflow</li>
+            <li>Lead capture structure</li>
+            <li>Qualification form</li>
+            <li>CTA architecture</li>
+            <li>Tracking foundations</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-head">
+          <div class="phase-num">Phase 03</div>
+          <div class="phase-title">Automate</div>
+          <div class="phase-weeks">Weeks 8–10</div>
+        </div>
+        <div class="phase-body">
+          <ul>
+            <li>AI-assisted lead research</li>
+            <li>AI-assisted follow-up support</li>
+            <li>CRM pipeline setup</li>
+            <li>Sales-call briefing template</li>
+            <li>Competitor monitoring workflow</li>
+            <li>Content support workflow</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-head">
+          <div class="phase-num">Phase 04</div>
+          <div class="phase-title">Optimise</div>
+          <div class="phase-weeks">Weeks 11–12</div>
+        </div>
+        <div class="phase-body">
+          <ul>
+            <li>Weekly execution reviews</li>
+            <li>Conversion friction fixes</li>
+            <li>Offer clarity improvements</li>
+            <li>Lead quality analysis</li>
+            <li>Monthly market capture report</li>
+            <li>90-day post-sprint roadmap</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Outcomes -->
+<section class="section">
+  <div class="container">
+    <div class="sh">
+      <span class="badge badge-navy">What the Sprint Is Designed to Improve</span>
+      <h2>A stronger position at every stage of the buyer journey.</h2>
+      <p>The sprint does not guarantee specific metrics. It builds and strengthens the controllable system around each layer of buyer decision-making.</p>
+    </div>
+    <div class="outcome-grid">
+      <div class="outcome-card"><div class="outcome-icon">📡</div><div class="outcome-text"><h3>Easier to Find</h3><p>Stronger presence in search channels where buyers are actively looking, comparing, and shortlisting.</p></div></div>
+      <div class="outcome-card"><div class="outcome-icon">🛡️</div><div class="outcome-text"><h3>Easier to Trust</h3><p>Stronger reviews, proof, credentials, and authority signals — so buyers feel confident before contacting you.</p></div></div>
+      <div class="outcome-card"><div class="outcome-icon">⚡</div><div class="outcome-text"><h3>Easier to Contact</h3><p>Lower-friction enquiry and booking journey — fewer abandoned paths, clearer calls-to-action.</p></div></div>
+      <div class="outcome-card"><div class="outcome-icon">🎯</div><div class="outcome-text"><h3>Better Enquiry Quality</h3><p>Qualification structure that means incoming leads are more informed, more serious, and closer to deciding.</p></div></div>
+      <div class="outcome-card"><div class="outcome-icon">📋</div><div class="outcome-text"><h3>Warmer Sales Calls</h3><p>Pre-call education and AI-assisted briefing means sales conversations start with less cold-selling required.</p></div></div>
+      <div class="outcome-card"><div class="outcome-icon">🔁</div><div class="outcome-text"><h3>Repeatable Foundation</h3><p>A system that runs, improves, and compounds — not a one-off campaign that stops when the invoice does.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section alt">
+  <div class="container">
+    <div style="max-width:640px;margin:0 auto">
+      <div class="price-block">
+        <div class="price-label">Starting Investment</div>
+        <div class="price-amount">S$15,000</div>
+        <div class="price-note">For a complete 12-week Market Capture Sprint.<br>Final scope confirmed after Revenue Leak Intelligence Brief diagnostic.</div>
+        <a href="/revenue-leak-intelligence-brief.html" class="btn btn-amber btn-lg" onclick="if(typeof gtag!=='undefined')gtag('event','market_capture_application_submit',{location:'pricing'})">Apply for the Sprint →</a>
+        <p class="price-disclaimer">Scope, timeline, and investment are confirmed after the diagnostic. Pricing depends on market complexity, number of pages, CRM requirements, and implementation scope.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Application Process -->
+<section class="section">
+  <div class="container">
+    <div class="sh">
+      <span class="badge badge-amber">How to Apply</span>
+      <h2>Five steps from application to kickoff.</h2>
+    </div>
+    <div class="apply-steps">
+      <div class="as-step"><div class="as-num">01</div><div class="as-label">Submit Revenue Leak Intelligence Brief request</div></div>
+      <div class="as-step"><div class="as-num">02</div><div class="as-label">Vanguardeer reviews fit and prepares diagnostic</div></div>
+      <div class="as-step"><div class="as-num">03</div><div class="as-label">Diagnostic delivered and discussed on a strategy call</div></div>
+      <div class="as-step"><div class="as-num">04</div><div class="as-label">Sprint proposal issued with confirmed scope</div></div>
+      <div class="as-step"><div class="as-num">05</div><div class="as-label">Agreement signed — kickoff scheduled within 2–3 weeks</div></div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="/revenue-leak-intelligence-brief.html" class="btn btn-amber btn-lg">Start with a Revenue Leak Intelligence Brief</a>
+      <p style="margin-top:12px;font-size:12px;color:var(--text3);font-family:var(--mono)">Selective intake · Every application reviewed before responding</p>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-logo"><img src="/brand/logos/logo-horizontal.svg" alt="Vanguardeer" height="40"></div>
+        <div class="footer-tagline">Where Strategy Becomes Revenue.</div>
+        <p class="footer-desc">AI-powered revenue systems for high-value clinics, expert firms, and B2B service businesses.</p>
+        <div class="footer-contact"><span>✉</span><a href="mailto:enquiries@vanguardeer.com">enquiries@vanguardeer.com</a></div>
+      </div>
+      <div>
+        <div class="fcol-title">Systems</div>
+        <a href="/ai-revenue-systems.html" class="flink">AI Revenue Systems</a>
+        <a href="/market-capture-sprint.html" class="flink">Market Capture Sprint</a>
+        <a href="/ai-revenue-operating-system.html" class="flink">AI Revenue Operating System</a>
+        <a href="/revenue-leak-intelligence-brief.html" class="flink">Revenue Leak Intelligence Brief</a>
+      </div>
+      <div>
+        <div class="fcol-title">Industries</div>
+        <a href="/patient-acquisition-system.html" class="flink">Patient Acquisition System</a>
+        <a href="/cyber-gtm-intelligence-system.html" class="flink">Cyber GTM Intelligence System</a>
+      </div>
+      <div>
+        <div class="fcol-title">Company</div>
+        <a href="/about.html" class="flink">About Azam</a>
+        <a href="/insights/index.html" class="flink">Insights</a>
+        <a href="/contact.html" class="flink">Contact / Apply</a>
+        <a href="/privacy.html" class="flink">Privacy Policy</a>
+        <a href="/terms.html" class="flink">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Vanguardeer Pte. Ltd. All rights reserved.</span>
+      <span>Singapore · enquiries@vanguardeer.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar=document.getElementById('bar'),nav=document.getElementById('nav'),bc=document.getElementById('bar-close');
+  if(sessionStorage.getItem('bar-dismissed')){bar.classList.add('hidden');nav.classList.add('bar-gone')}
+  bc&&bc.addEventListener('click',function(){bar.classList.add('hidden');nav.classList.add('bar-gone');sessionStorage.setItem('bar-dismissed','1')});
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+  var h=document.getElementById('hamburger'),d=document.getElementById('mobile-drawer');
+  h&&h.addEventListener('click',function(){var o=d.classList.toggle('open');h.classList.toggle('open',o);document.body.style.overflow=o?'hidden':''});
+  d&&d.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){d.classList.remove('open');h.classList.remove('open');document.body.style.overflow=''})});
+  var dtCta=document.querySelector('[data-desktop-cta]');
+  if(dtCta){function t(){dtCta.style.display=window.innerWidth>=900?'inline-flex':'none'}t();window.addEventListener('resize',t,{passive:true})}
+})();
+</script>
+</body>
+</html>
